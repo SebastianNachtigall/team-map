@@ -1,10 +1,17 @@
 import L from 'leaflet';
-import { Connection, MarkerWithData } from './types';
 import { MapManager } from './map';
+import { MarkerWithData } from './types';
+
+interface Connection {
+    sourceId: string;
+    targetId: string;
+    sourceName: string;
+    targetName: string;
+}
 
 export class ConnectionManager {
     private mapManager: MapManager;
-    private connections: Map<string, L.Polyline> = new Map();
+    private connections: Map<string, Connection> = new Map();
     private connectionLines: L.Path[] = [];
     private connectionHearts: HTMLElement[] = [];
     private isConnectionMode: boolean = false;
@@ -201,6 +208,16 @@ export class ConnectionManager {
         }
     }
 
+    public findConnectionsForPin(pinId: string): Connection[] {
+        const connections: Connection[] = [];
+        for (const connection of this.connections.values()) {
+            if (connection.sourceId === pinId || connection.targetId === pinId) {
+                connections.push(connection);
+            }
+        }
+        return connections;
+    }
+
     private findConnection(sourceId: string, targetId: string): Connection | undefined {
         // Find connection in existing connections
         const connections = this.connections.values();
@@ -219,6 +236,10 @@ export class ConnectionManager {
     }
 
     private drawConnection(connection: Connection) {
+        // Store the connection in our map
+        const connectionId = `${connection.sourceId}-${connection.targetId}`;
+        this.connections.set(connectionId, connection);
+
         // Find markers
         const markers = this.mapManager.getMarkers();
         const sourceMarker = markers.find(m => 
