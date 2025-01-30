@@ -1,6 +1,7 @@
 import L from 'leaflet';
 import { MapManager } from './map';
 import { MarkerWithData } from './types';
+import { config } from './config';
 
 interface Connection {
     sourceId: string;
@@ -143,7 +144,7 @@ export class ConnectionManager {
         }
 
         try {
-            const data = await this.fetchApi('/connections', {
+            const data = await this.fetchApi(config.api.connections, {
                 method: 'POST',
                 body: JSON.stringify({
                     sourceId: this.sourceMarker.pinId,
@@ -198,9 +199,13 @@ export class ConnectionManager {
 
     public async loadConnections() {
         try {
-            const data = await this.fetchApi('/connections');
-            if (data.status === 'success' && data.connections) {
-                this.drawConnections(data.connections);
+            console.log('Loading connections...');
+            const response = await this.fetchApi(config.api.connections);
+            if (response.status === 'success' && Array.isArray(response.connections)) {
+                console.log('Connections loaded:', response.connections);
+                this.drawConnections(response.connections);
+            } else {
+                console.error('Invalid response format:', response);
             }
         } catch (error) {
             console.error('Error loading connections:', error);

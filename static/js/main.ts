@@ -3,6 +3,7 @@ import { ConnectionManager } from './connections';
 import { PinManager } from './pins';
 import { ActivityFeed } from './activity';
 import { Pin, MarkerWithData } from './types';
+import { config } from './config';
 
 declare global {
     interface Window {
@@ -79,11 +80,15 @@ export class App {
 
     private async getRandomGif(): Promise<string> {
         try {
-            const response = await this.fetchApi('/api/random-gif');
-            if (response.status === 'success' && response.url) {
-                return response.url;
+            const response = await fetch(config.api.randomGif);
+            if (!response.ok) {
+                throw new Error(`API call failed: ${response.statusText}`);
             }
-            throw new Error(response.message || 'Failed to get random GIF');
+            const data = await response.json();
+            if (data.status === 'success' && data.url) {
+                return data.url;
+            }
+            throw new Error('Invalid response format');
         } catch (error) {
             console.error('Error fetching random GIF:', error);
             throw error;

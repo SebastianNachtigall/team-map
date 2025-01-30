@@ -1,6 +1,7 @@
 import L from 'leaflet';
 import { Pin, MarkerWithData } from './types';
 import { MapManager } from './map';
+import { config } from './config';
 
 export class PinManager {
     private mapManager: MapManager;
@@ -75,7 +76,7 @@ export class PinManager {
                 loadingOverlay.classList.remove('hidden');
             }
 
-            const response = await this.fetchApi('/pins', {
+            const response = await this.fetchApi(config.api.pins, {
                 method: 'POST',
                 body: JSON.stringify(pinData)
             });
@@ -112,30 +113,55 @@ export class PinManager {
         }
     }
 
-    public async loadPins(): Promise<void> {
+    public async loadPins(): Promise<Pin[]> {
         try {
-            const response = await this.fetchApi('/pins');
-            const data = response;
-
-            if (data.status === 'success' && data.pins) {
-                // Clear existing markers
-                this.mapManager.clearMarkers();
-                
-                // Add each pin and create activity
-                data.pins.forEach((pin: Pin) => {
-                    const marker = this.addPinToMap(pin);
-                    // Bind popup to marker
-                    if (marker) {
-                        const popupContent = this.createPopupContent(pin, marker);
-                        marker.bindPopup(popupContent);
-                    }
-                    // Add to activity feed with isExisting flag
-                    window.app?.activityFeed?.addActivity('pin_created', { pin }, true);
-                });
+            console.log('Loading pins...');
+            const response = await this.fetchApi(config.api.pins);
+            if (response.status === 'success' && Array.isArray(response.pins)) {
+                console.log('Pins loaded:', response.pins);
+                return response.pins;
+            } else {
+                console.error('Invalid response format:', response);
+                return [];
             }
         } catch (error) {
             console.error('Error loading pins:', error);
-            throw error; // Propagate error to caller
+            throw error;
+        }
+    }
+
+    public async createPin(lat: number, lng: number, name: string, imageUrl: string = ''): Promise<Pin> {
+        try {
+            console.log('Creating pin:', { lat, lng, name, imageUrl });
+            const response = await this.fetchApi(config.api.pins, {
+                method: 'POST',
+                body: JSON.stringify({ lat, lng, name, imageUrl }),
+            });
+            if (response.status === 'success' && response.pin) {
+                console.log('Pin created:', response.pin);
+                return response.pin;
+            } else {
+                throw new Error('Invalid response format');
+            }
+        } catch (error) {
+            console.error('Error creating pin:', error);
+            throw error;
+        }
+    }
+
+    public async deletePin(pinId: string): Promise<void> {
+        try {
+            console.log('Deleting pin:', pinId);
+            const response = await this.fetchApi(`${config.api.pins}/${pinId}`, {
+                method: 'DELETE',
+            });
+            if (response.status !== 'success') {
+                throw new Error('Failed to delete pin');
+            }
+            console.log('Pin deleted:', pinId);
+        } catch (error) {
+            console.error('Error deleting pin:', error);
+            throw error;
         }
     }
 
@@ -180,45 +206,6 @@ export class PinManager {
             return marker;
         } catch (error) {
             console.error('Error adding pin to map:', error);
-            throw error;
-        }
-    }
-
-    public async deletePin(pinId: string) {
-        console.log('Deleting pin:', pinId);
-        try {
-            const response = await this.fetchApi(`/pins/${pinId}`, {
-                method: 'DELETE'
-            });
-            const data = response;
-
-            if (data.status === 'success') {
-                // Find and remove the marker
-                const markers = this.mapManager.getMarkers();
-                const markerToDelete = markers.find(m => 
-                    (m as MarkerWithData).pinId === pinId
-                ) as MarkerWithData | undefined;
-                
-                if (markerToDelete) {
-                    // If this was the selected marker, clear selection
-                    if (this.selectedMarker === markerToDelete) {
-                        this.selectedMarker = null;
-                    }
-                    
-                    // Remove the label marker if it exists
-                    if (markerToDelete.labelMarker) {
-                        markerToDelete.labelMarker.remove();
-                    }
-                    
-                    // Remove the marker from the map
-                    markerToDelete.remove();
-                    
-                    // Add delete activity
-                    window.app?.activityFeed?.addActivity('pin_deleted', { pin: markerToDelete.pinData });
-                }
-            }
-        } catch (error) {
-            console.error('Error deleting pin:', error);
             throw error;
         }
     }
