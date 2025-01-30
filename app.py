@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, Response, make_response
+from flask import Flask, request, jsonify, Response, make_response, send_from_directory
 import json
 import os
 import queue
@@ -12,7 +12,7 @@ import requests
 from datetime import datetime
 from dotenv import load_dotenv
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='dist', static_url_path='')
 
 # Load environment variables
 load_dotenv()
@@ -137,6 +137,10 @@ def load_locations():
     except Exception as e:
         logger.error(f"Error loading locations: {e}")
         return {'status': 'error', 'message': str(e)}
+
+@app.route('/')
+def serve_index():
+    return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/pins', methods=['GET', 'POST'])
 def handle_pins():

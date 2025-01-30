@@ -3,5 +3,5 @@ builder = "nixpacks"
 buildCommand = "pip install -r requirements.txt && npm install && npm run build"
 
 [deploy]
-startCommand = "sh -c 'gunicorn wsgi:application --bind 0.0.0.0:${PORT:-5000}'"
+startCommand = "sh -c 'gunicorn wsgi:application --bind 0.0.0.0:${PORT:-5002}'"
 restartPolicyType = "ON_FAILURE"
