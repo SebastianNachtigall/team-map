@@ -76,12 +76,7 @@ export class MapManager {
                 newLuckyGifBtn.disabled = true;
                 newLuckyGifBtn.textContent = '🎲';
                 
-                const response = await fetch('http://localhost:5002/api/random-gif');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-                
+                const data = await this.fetchApi('/api/random-gif');
                 if (data.status === 'success' && data.url) {
                     console.log('Setting image URL to:', data.url);
                     imageUrlInput.value = data.url;
@@ -152,6 +147,20 @@ export class MapManager {
         }
 
         console.log('Pin creation setup complete');
+    }
+
+    private async fetchApi(endpoint: string, options: RequestInit = {}) {
+        const response = await fetch(endpoint, {
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers,
+            },
+        });
+        if (!response.ok) {
+            throw new Error(`API call failed: ${response.statusText}`);
+        }
+        return response.json();
     }
 
     public getMap(): L.Map {
