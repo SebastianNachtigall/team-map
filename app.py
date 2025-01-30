@@ -21,6 +21,12 @@ load_dotenv()
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
+# Check for required environment variables
+GIPHY_API_KEY = os.getenv('GIPHY_API_KEY')
+if not GIPHY_API_KEY:
+    logger.error("GIPHY_API_KEY environment variable is not set")
+    raise ValueError("GIPHY_API_KEY environment variable is required")
+
 # Directory to store individual pin files
 PINS_DIR = 'pins'
 os.makedirs(PINS_DIR, exist_ok=True)
@@ -30,8 +36,6 @@ location_cache = {}
 pins_cache = {}  # In-memory cache for pins
 last_cache_update = 0
 CACHE_DURATION = 60  # Seconds before refreshing cache
-
-GIPHY_API_KEY = os.getenv('GIPHY_API_KEY')  # Get API key from environment variable
 
 def get_nearest_city(lat, lon):
     # Check cache first
@@ -891,7 +895,9 @@ def delete_connection_new(source_id, target_id):
 
 @app.after_request
 def add_cors_headers(response):
-    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:5173'
+    # Get the request origin or use a default value
+    origin = request.headers.get('Origin', '*')
+    response.headers['Access-Control-Allow-Origin'] = origin
     response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
     response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
     return response
@@ -901,4 +907,5 @@ def handle_options():
     return '', 204
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5002, debug=True)
+    port = int(os.getenv('PORT', 5002))
+    app.run(host='0.0.0.0', port=port, debug=False)
