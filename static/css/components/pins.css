@@ -1,0 +1,33 @@
+.marker-icon {
+    transition: transform 0.2s;
+}
+
+.marker-icon:hover {
+    transform: scale(1.1);
+}
+
+.delete-btn {
+    margin-top: 10px;
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    opacity: 0.9;
+}
+
+.image-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

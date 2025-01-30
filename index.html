@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    
+    <!-- Application CSS -->
+    <link rel="stylesheet" href="/static/css/layout.css">
+    <link rel="stylesheet" href="/static/css/forms.css">
+    <link rel="stylesheet" href="/static/css/map.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/components/pins.css">
+    <link rel="stylesheet" href="/static/css/components/popups.css">
+    <link rel="stylesheet" href="/static/css/components/activity.css">
+    <link rel="stylesheet" href="/static/css/components/dialogs.css">
+    <link rel="stylesheet" href="/static/css/components/connections.css">
+</head>
+<body>
+    <div class="header">
+        <img src="https://logos-world.net/wp-content/uploads/2024/07/TUI-Symbol.png" alt="TUI Logo">
+        <h1>People of TUI.com</h1>
+    </div>
+    
+    <div class="main-container">
+        <div class="form-container">
+            <h3>Place your location</h3>
+            <div class="input-group">
+                <label for="name"></label>
+                <input type="text" id="name" placeholder="Enter your name" maxlength="40" required>
+            </div>
+            <div class="input-group">
+                <label for="imageUrl"></label>
+                <div class="input-with-button">
+                    <input type="text" id="imageUrl" placeholder="Image URL (optional)">
+                    <button id="luckyGifBtn" class="btn btn-icon" title="Feeling lucky? Get a random GIF!">🍀</button>
+                </div>
+                <small class="helper-text">(<a href="https://giphy.com/" target="_blank">Giphy</a>)</small>
+            </div>
+            <button id="addPinBtn" class="btn">Add Pin</button>
+            <small id="instructions" class="helper-text">Click "Add Pin" to place marker</small>
+        </div>
+
+        <div class="content-container">
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-controls">
+                    <button id="downloadBtn" class="btn btn-icon" title="Download Light Map (requires internet)">💾</button>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="activity-feed" id="activity-feed">
+                    <h3>Recent Activity</h3>
+                    <div id="activityList"></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="sidebarToggle" class="sidebar-toggle" aria-label="Toggle Sidebar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="hidden">
+        <div class="loading-content">
+            <div class="sun-emoji-spinner">☀️</div>
+            <div id="loading-text"></div>
+        </div>
+    </div>
+
+    <!-- Connection Dialog -->
+    <div id="connectionDialog" class="connection-dialog">
+        <h3>Create Connection</h3>
+        <div class="input-group">
+            <label for="connectionLabel">Label:</label>
+            <input type="text" id="connectionLabel" placeholder="Connection label (optional)">
+        </div>
+        <div class="buttons">
+            <button class="btn btn-secondary cancel">Cancel</button>
+            <button class="btn confirm">Create</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="module" src="/static/js/main.ts"></script>
+</body>
+</html>

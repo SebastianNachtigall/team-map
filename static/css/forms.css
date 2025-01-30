@@ -1,0 +1,212 @@
+/* Form styles */
+.form-container {
+    padding: 8px 16px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.form-container h3 {
+    margin: 0;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.input-group {
+    margin: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-group label {
+    margin: 0;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.input-group input {
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.input-group .helper-text {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+.input-group button {
+    white-space: nowrap;
+}
+
+.input-with-button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.input-with-button input {
+    flex: 1;
+}
+
+#instructions {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #003b95;
+    box-shadow: 0 0 0 2px rgba(0, 59, 149, 0.1);
+}
+
+input::placeholder, textarea::placeholder {
+    color: #999;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+    opacity: 0.5;
+}
+
+.helper-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.helper-text a {
+    color: #0A84FF;
+    text-decoration: none;
+}
+
+.helper-text a:hover {
+    text-decoration: underline;
+}
+
+/* Error states */
+.input-error {
+    border-color: #dc3545;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: -8px;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0A84FF;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0070E0;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn.active {
+    background-color: #34c759;
+    color: white;
+}
+
+.btn.active:hover {
+    background-color: #30b753;
+}
+
+.btn-icon {
+    padding: 8px;
+    font-size: 16px;
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.btn-icon:hover {
+    transform: scale(1.1);
+}
+
+.btn-icon:active {
+    transform: scale(0.95);
+}
+
+button.delete-button {
+    padding: 0;
+    margin: 4px 0 0 auto;
+    background: none !important;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    color: #FF3B30 !important;
+    width: auto;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+button.delete-button:hover {
+    transform: scale(1.1);
+    color: #FF2D55 !important;
+}
+
+button.delete-button:active {
+    transform: scale(0.95);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}

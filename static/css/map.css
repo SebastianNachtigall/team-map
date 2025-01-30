@@ -1,0 +1,29 @@
+#map {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Connection mode styles */
+.connection-mode .leaflet-marker-icon {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.connection-mode .source-marker {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+.connection-mode .available-target {
+    filter: none !important;
+    opacity: 0.8 !important;
+}
+
+.connection-mode .available-target:hover {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: scale(1.2);
+}

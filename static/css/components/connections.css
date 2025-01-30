@@ -1,0 +1,40 @@
+.heart-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.connection-heart {
+    position: absolute;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    margin-top: -12px;
+    text-align: center;
+    line-height: 24px;
+    pointer-events: none;
+    z-index: 1000;
+    animation: pulse 1.5s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: left 0.1s linear, top 0.1s linear;
+}
+
+/* Reset Leaflet marker icon styles */
+.leaflet-marker-icon.connection-heart {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}

@@ -1,0 +1,186 @@
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    padding: 0;
+}
+
+.leaflet-popup-content {
+    margin: 13px;
+    width: auto !important;
+    min-width: 200px;
+}
+
+.pin-popup {
+    min-width: 200px;
+    max-width: 250px;
+    padding-bottom: 8px;
+}
+
+.pin-popup-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding: 4px;
+}
+
+.pin-popup-header h3 {
+    margin: 0;
+    flex: 1;
+}
+
+.pin-popup h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    flex-grow: 1;
+}
+
+.pin-popup strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+.pin-popup img {
+    display: block;
+    max-width: 100%;
+    max-height: 150px;
+    margin: 8px 0;
+    border-radius: 4px;
+}
+
+.popup-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.pin-connections {
+    margin-top: 12px;
+    padding: 4px;
+}
+
+.pin-connections h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.connections-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.connection-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 0;
+    gap: 8px;
+}
+
+.connection-item span {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.delete-connection-button,
+.delete-button,
+.connect-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.delete-connection-button:hover,
+.delete-button:hover,
+.connect-button:hover {
+    transform: scale(1.1);
+}
+
+.has-image {
+    max-width: 300px;
+}
+
+/* Custom pin styles */
+.custom-pin {
+    text-align: center;
+}
+
+/* Label styles */
+.pin-label {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    color: #333;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 1px 4px;
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+.label-only {
+    background: none;
+    border: none;
+}
+
+/* Pin popup styles */
+.pin-popup-image {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    margin-top: 8px;
+    border-radius: 4px;
+}
+
+.pin-popup img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+/* Hide default marker icon */
+.custom-pin .leaflet-marker-icon {
+    display: none;
+}
+
+/* Hide the tooltip arrow */
+.leaflet-tooltip-top:before,
+.leaflet-tooltip-bottom:before,
+.leaflet-tooltip-left:before,
+.leaflet-tooltip-right:before {
+    display: none !important;
+}
+
+/* Ensure tooltips are visible */
+.leaflet-tooltip.pin-label {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Center tooltip container */
+.leaflet-tooltip {
+    position: absolute;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+.leaflet-popup-close-button {
+    padding: 8px !important;
+}
