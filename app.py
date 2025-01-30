@@ -714,13 +714,14 @@ def generate_light_map():
 
 @app.route('/api/random-gif', methods=['GET'])
 def get_random_gif():
-    if GIPHY_API_KEY == "YOUR_GIPHY_API_KEY":
-        return jsonify({
-            'status': 'error',
-            'message': 'Please configure your Giphy API key in app.py'
-        }), 500
-
     try:
+        if not GIPHY_API_KEY:
+            logger.error("GIPHY_API_KEY environment variable is not set")
+            return jsonify({
+                'status': 'error',
+                'message': 'GIPHY_API_KEY environment variable is not set'
+            }), 500
+
         url = f"https://api.giphy.com/v1/gifs/random?api_key={GIPHY_API_KEY}&rating=g"
         response = requests.get(url)
         response.raise_for_status()  # Raise exception for bad status codes
@@ -732,16 +733,19 @@ def get_random_gif():
                 'url': data['data']['images']['original']['url']
             })
         else:
+            logger.error("Could not fetch GIF from Giphy: No URL in response")
             return jsonify({
                 'status': 'error',
                 'message': 'Could not fetch GIF from Giphy'
             }), 500
     except requests.RequestException as e:
+        logger.error(f"Network error while fetching GIF: {str(e)}")
         return jsonify({
             'status': 'error',
             'message': f'Network error: {str(e)}'
         }), 500
     except Exception as e:
+        logger.error(f"Unexpected error while fetching GIF: {str(e)}")
         return jsonify({
             'status': 'error',
             'message': f'Error: {str(e)}'
