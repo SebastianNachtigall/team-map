@@ -6,5 +6,12 @@
   "timestamp": "2025-01-30T00:49:15.086219",
   "location": "Pierocice",
   "id": "46c3b8ad-edb8-4fce-83a2-66834309f52f",
-  "connections": []
+  "connections": [
+    {
+      "id": "de66692e-3ebf-473b-87fe-80473c7b3df2",
+      "sourceId": "46c3b8ad-edb8-4fce-83a2-66834309f52f",
+      "targetId": "5c610d53-3cf2-4ad4-ac90-77d9d562e169",
+      "timestamp": "2025-01-30T13:25:20.856618"
+    }
+  ]
 }

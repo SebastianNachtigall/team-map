@@ -6,5 +6,12 @@
   "timestamp": "2025-01-30T01:03:54.258386",
   "location": "Schleswig-Holstein",
   "id": "1e17cdbb-7d30-4036-9f22-81b40a73bbfc",
-  "connections": []
+  "connections": [
+    {
+      "id": "e5a3cbd3-423b-43ec-a17f-ebfbf1527cda",
+      "sourceId": "71fd1e33-b1ff-44ff-a0a7-1ec1f60f8bb2",
+      "targetId": "1e17cdbb-7d30-4036-9f22-81b40a73bbfc",
+      "timestamp": "2025-01-30T13:25:12.211633"
+    }
+  ]
 }

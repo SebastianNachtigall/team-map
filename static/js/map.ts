@@ -1,6 +1,7 @@
 import L from 'leaflet';
 import { MapConfig, MarkerWithData } from './types';
 import { sanitizeText } from './utils/helpers';
+import { config } from './config';
 
 export class MapManager {
     private map: L.Map;
@@ -76,7 +77,12 @@ export class MapManager {
                 newLuckyGifBtn.disabled = true;
                 newLuckyGifBtn.textContent = '🎲';
                 
-                const data = await this.fetchApi('/api/random-gif');
+                const response = await fetch(config.api.randomGif);
+                if (!response.ok) {
+                    throw new Error(`API call failed: ${response.statusText}`);
+                }
+                const data = await response.json();
+                
                 if (data.status === 'success' && data.url) {
                     console.log('Setting image URL to:', data.url);
                     imageUrlInput.value = data.url;

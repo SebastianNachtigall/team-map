@@ -1,5 +1,8 @@
 // API configuration
-const API_BASE_URL = 'http://localhost:5002';
+const isDevelopment = import.meta.env.DEV;
+const API_BASE_URL = isDevelopment 
+    ? 'http://localhost:5002'  // Development
+    : window.location.origin;   // Production
 
 export const config = {
     api: {

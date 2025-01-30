@@ -6,5 +6,12 @@
   "timestamp": "2025-01-30T01:29:58.943118",
   "location": "\u041c\u0430\u043b\u043e\u0432\u0438\u0448\u0435\u0440\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d",
   "id": "71fd1e33-b1ff-44ff-a0a7-1ec1f60f8bb2",
-  "connections": []
+  "connections": [
+    {
+      "id": "e5a3cbd3-423b-43ec-a17f-ebfbf1527cda",
+      "sourceId": "71fd1e33-b1ff-44ff-a0a7-1ec1f60f8bb2",
+      "targetId": "1e17cdbb-7d30-4036-9f22-81b40a73bbfc",
+      "timestamp": "2025-01-30T13:25:12.211633"
+    }
+  ]
 }

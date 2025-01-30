@@ -119,6 +119,21 @@ export class PinManager {
             const response = await this.fetchApi(config.api.pins);
             if (response.status === 'success' && Array.isArray(response.pins)) {
                 console.log('Pins loaded:', response.pins);
+                
+                // Clear existing markers
+                this.mapManager.clearMarkers();
+                
+                // Add each pin to the map
+                response.pins.forEach((pin: Pin) => {
+                    const marker = this.addPinToMap(pin);
+                    if (marker) {
+                        const popupContent = this.createPopupContent(pin, marker);
+                        marker.bindPopup(popupContent);
+                    }
+                    // Add to activity feed with isExisting flag
+                    window.app?.activityFeed?.addActivity('pin_created', { pin }, true);
+                });
+
                 return response.pins;
             } else {
                 console.error('Invalid response format:', response);

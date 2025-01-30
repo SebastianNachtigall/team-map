@@ -1,17 +1,22 @@
 version: '3.8'
 services:
   web:
-    build: .
+    build: 
+      context: .
+      target: development  # Use development stage
     ports:
-      - "5002:5002"
+      - "5002:5002"  # Flask backend
+      - "5173:5173"  # Vite dev server
     volumes:
       - .:/app
       - /app/node_modules  # Don't override node_modules with local
+      - /app/dist  # Don't override dist with local
     environment:
       - PORT=5002
       - FLASK_ENV=development
       - FLASK_DEBUG=1
       - GIPHY_API_KEY=${GIPHY_API_KEY}
+      - VITE_DEV_SERVER_HOST=0.0.0.0  # Allow external connections to Vite
     command: >
-      sh -c "npm run dev & 
+      sh -c "npm run dev -- --host 0.0.0.0 & 
              python app.py"

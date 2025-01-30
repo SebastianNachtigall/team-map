@@ -61,12 +61,7 @@ export class App {
 
         // Load initial data
         console.log('Loading initial data...');
-        this.pinManager.loadPins()
-            .then(() => {
-                // Load connections after pins are loaded
-                console.log('Loading connections...');
-                return this.connectionManager.loadConnections();
-            })
+        this.loadInitialData()
             .catch(error => {
                 console.error('Error loading initial data:', error);
             });
@@ -75,7 +70,18 @@ export class App {
     }
 
     private async loadInitialData() {
-        await this.pinManager.loadPins();
+        try {
+            // Load pins first
+            console.log('Loading pins...');
+            await this.pinManager.loadPins();
+
+            // Load connections after pins are loaded
+            console.log('Loading connections...');
+            await this.connectionManager.loadConnections();
+        } catch (error) {
+            console.error('Error loading initial data:', error);
+            throw error;
+        }
     }
 
     private async getRandomGif(): Promise<string> {

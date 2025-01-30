@@ -1,5 +1,5 @@
-FROM python:3.11.7-slim
-
+# Base stage for both development and production
+FROM python:3.11.7-slim as base
 WORKDIR /app
 
 # Install node and npm
@@ -17,14 +17,27 @@ RUN pip install -r requirements.txt
 COPY package*.json .
 RUN npm install
 
+# Development stage
+FROM base as development
+ENV PYTHONUNBUFFERED=1
+ENV FLASK_ENV=development
+ENV FLASK_DEBUG=1
+ENV PORT=5002
+
+# Copy the rest of the application for development
+COPY . .
+
+# Production stage
+FROM base as production
+ENV PYTHONUNBUFFERED=1
+ENV FLASK_ENV=production
+ENV PORT=${PORT:-5002}
+
 # Copy the rest of the application
 COPY . .
 
-# Set environment variables
-ENV PYTHONUNBUFFERED=1
-ENV PORT=5002
-ENV FLASK_ENV=development
-ENV FLASK_DEBUG=1
+# Build frontend assets
+RUN npm run build
 
-# Default command (can be overridden by docker-compose)
-CMD ["gunicorn", "wsgi:application", "--bind", "0.0.0.0:$PORT", "--log-file", "-"]
+# Set the default command
+CMD ["python", "app.py"]
