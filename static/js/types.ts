@@ -6,6 +6,7 @@ export interface Pin {
     lat: number;
     lng: number;
     imageUrl?: string;
+    location?: string;
     connections?: Connection[];
 }
 
