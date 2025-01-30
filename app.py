@@ -28,8 +28,9 @@ if not GIPHY_API_KEY:
     raise ValueError("GIPHY_API_KEY environment variable is required")
 
 # Directory to store individual pin files
-PINS_DIR = 'pins'
+PINS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pins')
 os.makedirs(PINS_DIR, exist_ok=True)
+logger.info(f"Using pins directory: {PINS_DIR}")
 
 # Cache for reverse geocoding and pins
 location_cache = {}

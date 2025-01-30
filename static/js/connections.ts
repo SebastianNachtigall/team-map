@@ -114,11 +114,8 @@ export class ConnectionManager {
         }
 
         try {
-            const response = await fetch('http://localhost:5002/connections', {
+            const response = await this.fetchApi('/connections', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
                 body: JSON.stringify({
                     sourceId: this.sourceMarker.pinId,
                     targetId: targetMarker.pinId
@@ -163,9 +160,23 @@ export class ConnectionManager {
         }
     }
 
+    private async fetchApi(endpoint: string, options: RequestInit = {}) {
+        const response = await fetch(endpoint, {
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers,
+            },
+        });
+        if (!response.ok) {
+            throw new Error(`API call failed: ${response.statusText}`);
+        }
+        return response.json();
+    }
+
     public async loadConnections() {
         try {
-            const response = await fetch('http://localhost:5002/connections');
+            const response = await this.fetchApi('/connections');
             const data = await response.json();
             
             if (data.status === 'success' && data.connections) {
@@ -247,11 +258,8 @@ export class ConnectionManager {
 
     public async deleteConnection(connection: Connection, pinInfo?: { initiatorPinId: string, initiatorPinName: string, otherPinName: string }) {
         try {
-            const response = await fetch(`http://localhost:5002/connections/${connection.sourceId}/${connection.targetId}`, {
+            const response = await this.fetchApi(`/connections/${connection.sourceId}/${connection.targetId}`, {
                 method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
             });
 
             if (!response.ok) {

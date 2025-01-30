@@ -16,6 +16,20 @@ export class App {
     public connectionManager: ConnectionManager;
     public activityFeed: ActivityFeed;
 
+    private async fetchApi(endpoint: string, options: RequestInit = {}) {
+        const response = await fetch(endpoint, {
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers,
+            },
+        });
+        if (!response.ok) {
+            throw new Error(`API call failed: ${response.statusText}`);
+        }
+        return response.json();
+    }
+
     constructor() {
         console.log('Initializing App...');
         
@@ -61,6 +75,19 @@ export class App {
 
     private async loadInitialData() {
         await this.pinManager.loadPins();
+    }
+
+    private async getRandomGif(): Promise<string> {
+        try {
+            const response = await this.fetchApi('/api/random-gif');
+            if (response.status === 'success' && response.url) {
+                return response.url;
+            }
+            throw new Error(response.message || 'Failed to get random GIF');
+        } catch (error) {
+            console.error('Error fetching random GIF:', error);
+            throw error;
+        }
     }
 
     private setupEventListeners() {

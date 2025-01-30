@@ -16,6 +16,20 @@ export class PinManager {
         this.boundHandleMapClick = this.handleMapClick.bind(this);
     }
 
+    private async fetchApi(endpoint: string, options: RequestInit = {}) {
+        const response = await fetch(endpoint, {
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers,
+            },
+        });
+        if (!response.ok) {
+            throw new Error(`API call failed: ${response.statusText}`);
+        }
+        return response.json();
+    }
+
     public startPinMode(name: string, imageUrl: string = '') {
         console.log('Starting pin mode with:', { name, imageUrl });
         this.isPinMode = true;
@@ -61,17 +75,13 @@ export class PinManager {
                 loadingOverlay.classList.remove('hidden');
             }
 
-            const response = await fetch('http://localhost:5002/pins', {
+            const response = await this.fetchApi('/pins', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
                 body: JSON.stringify(pinData)
             });
 
-            console.log('Pin creation response:', response.status);
-            const data = await response.json();
-            console.log('Pin creation data:', data);
+            console.log('Pin creation response:', response);
+            const data = response;
 
             if (data.status === 'success' && data.pin) {
                 console.log('Pin created successfully:', data.pin);
@@ -104,9 +114,9 @@ export class PinManager {
 
     public async loadPins(): Promise<void> {
         try {
-            const response = await fetch('http://localhost:5002/pins');
-            const data = await response.json();
-            
+            const response = await this.fetchApi('/pins');
+            const data = response;
+
             if (data.status === 'success' && data.pins) {
                 // Clear existing markers
                 this.mapManager.clearMarkers();
@@ -177,11 +187,11 @@ export class PinManager {
     public async deletePin(pinId: string) {
         console.log('Deleting pin:', pinId);
         try {
-            const response = await fetch(`http://localhost:5002/pins/${pinId}`, {
+            const response = await this.fetchApi(`/pins/${pinId}`, {
                 method: 'DELETE'
             });
-            const data = await response.json();
-            
+            const data = response;
+
             if (data.status === 'success') {
                 // Find and remove the marker
                 const markers = this.mapManager.getMarkers();
