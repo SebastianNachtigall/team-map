@@ -4,7 +4,7 @@ import { MapManager } from './map';
 
 export class ConnectionManager {
     private mapManager: MapManager;
-    private connections: Connection[] = [];
+    private connections: Map<string, L.Polyline> = new Map();
     private connectionLines: L.Path[] = [];
     private connectionHearts: HTMLElement[] = [];
     private isConnectionMode: boolean = false;
@@ -108,13 +108,35 @@ export class ConnectionManager {
         this.sourceMarker = null;
     }
 
-    private async handleMarkerClick(targetMarker: MarkerWithData) {
-        if (!this.sourceMarker || !this.isConnectionMode) {
+    private async handleMarkerClick(marker: MarkerWithData) {
+        if (!this.sourceMarker) {
+            // First click - set source marker
+            this.sourceMarker = marker;
+            marker.setStyle({ color: 'yellow' });  // Highlight selected marker
+            return;
+        }
+
+        if (this.sourceMarker === marker) {
+            // Clicked same marker twice - deselect
+            this.sourceMarker.setStyle({ color: 'red' });  // Reset color
+            this.sourceMarker = null;
+            return;
+        }
+
+        // Second click - create connection
+        const targetMarker = marker;
+
+        // Check if connection already exists
+        const existingConnection = this.findConnection(this.sourceMarker.pinId, targetMarker.pinId);
+        if (existingConnection) {
+            console.log('Connection already exists');
+            this.sourceMarker.setStyle({ color: 'red' });  // Reset color
+            this.sourceMarker = null;
             return;
         }
 
         try {
-            const response = await this.fetchApi('/connections', {
+            const data = await this.fetchApi('/connections', {
                 method: 'POST',
                 body: JSON.stringify({
                     sourceId: this.sourceMarker.pinId,
@@ -122,41 +144,34 @@ export class ConnectionManager {
                 })
             });
 
-            const data = await response.json();
-            
             if (data.status === 'success' && data.connection) {
-                // Add activity for new connection
-                window.app?.activityFeed?.addActivity('connection_created', { connection: data.connection });
-                
-                // Reload all connections to ensure UI is in sync
-                await this.loadConnections();
-                
-                // Update both source and target pin popups
-                const sourcePin = window.app?.pinManager?.findPinById(this.sourceMarker.pinId);
-                const targetPin = window.app?.pinManager?.findPinById(targetMarker.pinId);
-                
-                if (sourcePin && targetPin) {
-                    // Update source pin popup
-                    const sourceContent = window.app?.pinManager?.createPopupContent(sourcePin, this.sourceMarker);
-                    if (sourceContent) {
-                        this.sourceMarker.getPopup()?.setContent(sourceContent);
-                    }
-                    
-                    // Update target pin popup
-                    const targetContent = window.app?.pinManager?.createPopupContent(targetPin, targetMarker);
-                    if (targetContent) {
-                        targetMarker.getPopup()?.setContent(targetContent);
-                    }
+                // Draw the new connection
+                this.drawConnection(data.connection);
+
+                // Reset source marker
+                this.sourceMarker.setStyle({ color: 'red' });
+                this.sourceMarker = null;
+
+                // Add activity
+                if (window.app && window.app.activityFeed) {
+                    window.app.activityFeed.addActivity({
+                        type: 'connection_created',
+                        timestamp: new Date().toISOString(),
+                        data: {
+                            sourceId: data.connection.sourceId,
+                            targetId: data.connection.targetId,
+                            sourceName: data.connection.sourceName,
+                            targetName: data.connection.targetName
+                        }
+                    });
                 }
-                
-                this.cancelConnectionMode();
-            } else {
-                console.error('Error response:', data);
-                alert('Error creating connection: ' + (data.message || 'Unknown error'));
             }
         } catch (error) {
             console.error('Error creating connection:', error);
-            alert('Error creating connection. Please try again.');
+            if (this.sourceMarker) {
+                this.sourceMarker.setStyle({ color: 'red' });
+                this.sourceMarker = null;
+            }
         }
     }
 
@@ -176,53 +191,35 @@ export class ConnectionManager {
 
     public async loadConnections() {
         try {
-            const response = await this.fetchApi('/connections');
-            const data = await response.json();
-            
+            const data = await this.fetchApi('/connections');
             if (data.status === 'success' && data.connections) {
-                // Clear existing connections first
-                this.clearConnections();
-                
-                // Add each connection
-                data.connections.forEach((connection: Connection) => {
-                    this.connections.push(connection);
-                    
-                    // Find markers
-                    const markers = this.mapManager.getMarkers();
-                    const sourceMarker = markers.find(m => 
-                        (m as MarkerWithData).pinId === connection.sourceId
-                    ) as MarkerWithData | undefined;
-                    
-                    const targetMarker = markers.find(m => 
-                        (m as MarkerWithData).pinId === connection.targetId
-                    ) as MarkerWithData | undefined;
-                    
-                    if (sourceMarker && targetMarker) {
-                        const line = this.createCurvedLine(
-                            sourceMarker.getLatLng(),
-                            targetMarker.getLatLng()
-                        );
-                        
-                        // Store connection reference
-                        (line as any).options.connection = connection;
-                        
-                        line.addTo(this.mapManager.getMap());
-                        this.connectionLines.push(line);
-                        
-                        // Add heart to the connection
-                        this.addTravelingHeart(line);
-                    }
-                });
+                this.drawConnections(data.connections);
             }
         } catch (error) {
             console.error('Error loading connections:', error);
+            throw error;
         }
     }
 
-    public addConnection(connection: Connection) {
-        this.connections.push(connection);
-        
-        // Find markers with proper type checking
+    private findConnection(sourceId: string, targetId: string): Connection | undefined {
+        // Find connection in existing connections
+        const connections = this.connections.values();
+        for (const connection of connections) {
+            if (connection.sourceId === sourceId && connection.targetId === targetId) {
+                return connection;
+            }
+        }
+        return undefined;
+    }
+
+    private drawConnections(connections: Connection[]) {
+        connections.forEach(connection => {
+            this.drawConnection(connection);
+        });
+    }
+
+    private drawConnection(connection: Connection) {
+        // Find markers
         const markers = this.mapManager.getMarkers();
         const sourceMarker = markers.find(m => 
             (m as MarkerWithData).pinId === connection.sourceId
@@ -231,85 +228,21 @@ export class ConnectionManager {
         const targetMarker = markers.find(m => 
             (m as MarkerWithData).pinId === connection.targetId
         ) as MarkerWithData | undefined;
-
+        
         if (sourceMarker && targetMarker) {
             const line = this.createCurvedLine(
                 sourceMarker.getLatLng(),
                 targetMarker.getLatLng()
             );
             
-            // Store the connection ID in the line options for reference
+            // Store connection reference
             (line as any).options.connection = connection;
             
             line.addTo(this.mapManager.getMap());
             this.connectionLines.push(line);
-
-            // Add traveling heart
-            this.addTravelingHeart(line);
-        }
-    }
-
-    public findConnectionsForPin(pinId: string): Connection[] {
-        const connections = this.connections.filter(conn => 
-            conn.sourceId === pinId || conn.targetId === pinId
-        );
-        return connections;
-    }
-
-    public async deleteConnection(connection: Connection, pinInfo?: { initiatorPinId: string, initiatorPinName: string, otherPinName: string }) {
-        try {
-            const response = await this.fetchApi(`/connections/${connection.sourceId}/${connection.targetId}`, {
-                method: 'DELETE',
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
             
-            if (data.status === 'success') {
-                // Add activity for deleted connection with pin names in correct order
-                if (pinInfo) {
-                    window.app?.activityFeed?.addActivity('connection_deleted', {
-                        connection,
-                        firstPinName: pinInfo.initiatorPinName,
-                        secondPinName: pinInfo.otherPinName
-                    });
-                } else {
-                    window.app?.activityFeed?.addActivity('connection_deleted', { connection });
-                }
-                
-                // Reload all connections to ensure UI is in sync
-                await this.loadConnections();
-                
-                // Update both source and target pin popups
-                const sourcePin = window.app?.pinManager?.findPinById(connection.sourceId);
-                const targetPin = window.app?.pinManager?.findPinById(connection.targetId);
-                
-                const markers = this.mapManager.getMarkers();
-                const sourceMarker = markers.find(m => (m as MarkerWithData).pinId === connection.sourceId) as MarkerWithData;
-                const targetMarker = markers.find(m => (m as MarkerWithData).pinId === connection.targetId) as MarkerWithData;
-                
-                if (sourcePin && targetPin && sourceMarker && targetMarker) {
-                    // Update source pin popup
-                    const sourceContent = window.app?.pinManager?.createPopupContent(sourcePin, sourceMarker);
-                    if (sourceContent && sourceMarker.getPopup()?.isOpen()) {
-                        sourceMarker.getPopup()?.setContent(sourceContent);
-                    }
-                    
-                    // Update target pin popup
-                    const targetContent = window.app?.pinManager?.createPopupContent(targetPin, targetMarker);
-                    if (targetContent && targetMarker.getPopup()?.isOpen()) {
-                        targetMarker.getPopup()?.setContent(targetContent);
-                    }
-                }
-            } else {
-                throw new Error(data.message || 'Failed to delete connection');
-            }
-        } catch (error) {
-            console.error('Error deleting connection:', error);
-            throw error;
+            // Add heart to the connection
+            this.addTravelingHeart(line);
         }
     }
 
