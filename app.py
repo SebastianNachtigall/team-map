@@ -21,11 +21,8 @@ load_dotenv()
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
-# Check for required environment variables
+# Get Giphy API key from environment
 GIPHY_API_KEY = os.getenv('GIPHY_API_KEY')
-if not GIPHY_API_KEY:
-    logger.error("GIPHY_API_KEY environment variable is not set")
-    raise ValueError("GIPHY_API_KEY environment variable is required")
 
 # Directory to store individual pin files
 PINS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pins')
@@ -714,6 +711,7 @@ def generate_light_map():
 
 @app.route('/api/random-gif', methods=['GET'])
 def get_random_gif():
+    logger.info("Random GIF endpoint called")
     try:
         if not GIPHY_API_KEY:
             logger.error("GIPHY_API_KEY environment variable is not set")
@@ -723,17 +721,24 @@ def get_random_gif():
             }), 500
 
         url = f"https://api.giphy.com/v1/gifs/random?api_key={GIPHY_API_KEY}&rating=g"
+        logger.info(f"Making request to Giphy API: {url.replace(GIPHY_API_KEY, '[REDACTED]')}")
+        
         response = requests.get(url)
         response.raise_for_status()  # Raise exception for bad status codes
+        
+        logger.info("Successfully got response from Giphy API")
         data = response.json()
         
         if data.get('data', {}).get('images', {}).get('original', {}).get('url'):
+            gif_url = data['data']['images']['original']['url']
+            logger.info(f"Successfully got GIF URL: {gif_url}")
             return jsonify({
                 'status': 'success',
-                'url': data['data']['images']['original']['url']
+                'url': gif_url
             })
         else:
             logger.error("Could not fetch GIF from Giphy: No URL in response")
+            logger.error(f"Response data: {json.dumps(data)}")
             return jsonify({
                 'status': 'error',
                 'message': 'Could not fetch GIF from Giphy'
@@ -746,6 +751,7 @@ def get_random_gif():
         }), 500
     except Exception as e:
         logger.error(f"Unexpected error while fetching GIF: {str(e)}")
+        logger.exception("Full traceback:")
         return jsonify({
             'status': 'error',
             'message': f'Error: {str(e)}'
