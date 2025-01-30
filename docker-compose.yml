@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "5002:5002"
+    volumes:
+      - .:/app
+      - /app/node_modules  # Don't override node_modules with local
+    environment:
+      - PORT=5002
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+      - GIPHY_API_KEY=${GIPHY_API_KEY}
+    command: >
+      sh -c "npm run dev & 
+             python app.py"

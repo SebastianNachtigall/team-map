@@ -20,12 +20,11 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
-# Build frontend assets
-RUN npm run build
-
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
 ENV PORT=5002
+ENV FLASK_ENV=development
+ENV FLASK_DEBUG=1
 
-# Command to run the application
+# Default command (can be overridden by docker-compose)
 CMD ["gunicorn", "wsgi:application", "--bind", "0.0.0.0:$PORT", "--log-file", "-"]
