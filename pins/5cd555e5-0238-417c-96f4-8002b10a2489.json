@@ -6,12 +6,5 @@
   "timestamp": "2025-01-31T23:09:33.369622",
   "location": "M\u00f8re og Romsdal",
   "id": "5cd555e5-0238-417c-96f4-8002b10a2489",
-  "connections": [
-    {
-      "id": "39617ff2-e93d-45b7-9c89-f81e746a53ba",
-      "sourceId": "dd0129ae-8536-445c-806d-994a65d76a1f",
-      "targetId": "5cd555e5-0238-417c-96f4-8002b10a2489",
-      "timestamp": "2025-01-31T23:30:52.506784"
-    }
-  ]
+  "connections": []
 }

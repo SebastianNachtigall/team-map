@@ -218,6 +218,11 @@ export class ConnectionManager {
             const response = await this.fetchApi(config.api.connections);
             if (response.status === 'success' && Array.isArray(response.connections)) {
                 console.log('Connections loaded:', response.connections);
+                
+                // Clear existing connections first
+                this.clearConnections();
+                
+                // Draw new connections
                 this.drawConnections(response.connections);
             } else {
                 console.error('Invalid response format:', response);
@@ -478,6 +483,8 @@ export class ConnectionManager {
     }
 
     public clearConnections() {
+        console.log('Clearing all connections...');
+        
         // Remove all lines
         this.connectionLines.forEach(line => {
             if (line && line.remove) {
@@ -487,12 +494,16 @@ export class ConnectionManager {
         
         // Remove all hearts
         this.connectionHearts.forEach(heart => {
-            heart.remove();
+            if (heart && heart.parentNode) {
+                heart.parentNode.removeChild(heart);
+            }
         });
         
         // Clear arrays and map
         this.connectionLines = [];
         this.connectionHearts = [];
         this.connections.clear();
+        
+        console.log('All connections cleared');
     }
 }
