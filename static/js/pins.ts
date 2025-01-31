@@ -4,6 +4,7 @@ import { MapManager } from './map';
 import { config } from './config';
 
 export class PinManager {
+    private pins: Pin[] = [];
     private mapManager: MapManager;
     private isPinMode: boolean = false;
     private selectedMarker: MarkerWithData | null = null;
@@ -111,6 +112,15 @@ export class PinManager {
                 loadingOverlay.classList.add('hidden');
             }
         }
+    }
+
+    public handleNewPin(pin: Pin): void {
+        // Skip if already exists
+        if (this.findPinById(pin.id)) return;
+        
+        // Add to map and internal state
+        this.addPinToMap(pin);
+        this.pins.push(pin);
     }
 
     public async loadPins(): Promise<Pin[]> {

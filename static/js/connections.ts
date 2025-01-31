@@ -255,6 +255,16 @@ export class ConnectionManager {
         });
     }
 
+    public handleNewConnection(connection: Connection): void {
+        // Skip if connection already exists
+        const connectionId = `${connection.sourceId}-${connection.targetId}`;
+        if (this.connections.has(connectionId)) return;
+        
+        // Draw the connection and store it
+        this.drawConnection(connection);
+        this.connections.set(connectionId, connection);
+    }
+
     private drawConnection(connection: Connection) {
         // Store the connection in our map
         const connectionId = `${connection.sourceId}-${connection.targetId}`;

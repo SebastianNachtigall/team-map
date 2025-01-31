@@ -9,5 +9,6 @@ export const config = {
         pins: `${API_BASE_URL}/pins`,
         connections: `${API_BASE_URL}/connections`,
         randomGif: `${API_BASE_URL}/api/random-gif`,
+        stream: `${API_BASE_URL}/stream`,
     }
 };

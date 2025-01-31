@@ -8,6 +8,7 @@ export interface Pin {
     imageUrl?: string;
     location?: string;
     connections?: Connection[];
+    timestamp?: string;
 }
 
 export interface Connection {

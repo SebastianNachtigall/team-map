@@ -65,8 +65,59 @@ export class App {
             .catch(error => {
                 console.error('Error loading initial data:', error);
             });
+
+        // Initialize SSE connection
+        console.log('Setting up SSE connection...');
+        this.setupSSE();
         
         console.log('App initialization complete');
+    }
+
+    private setupSSE() {
+        const eventSource = new EventSource(config.api.stream);
+        
+        eventSource.onmessage = (e) => {
+            try {
+                const event = JSON.parse(e.data);
+                console.log('SSE event received:', event);
+                
+                switch(event.type) {
+                    case 'pin_added':
+                        console.log('New pin added:', event.pin);
+                        this.pinManager.handleNewPin(event.pin);
+                        this.activityFeed.addActivity('pin_created', { pin: event.pin });
+                        break;
+                        
+                    case 'connection_added':
+                        console.log('New connection added:', event.connection);
+                        this.connectionManager.handleNewConnection(event.connection);
+                        this.activityFeed.addActivity('connection_created', { connection: event.connection });
+                        break;
+                        
+                    case 'activity_update':
+                        console.log('Activity update:', event.message);
+                        // Create a generic pin_created activity with just the message
+                        this.activityFeed.addActivity('pin_created', {
+                            pin: {
+                                id: crypto.randomUUID(),
+                                name: event.message,
+                                lat: 0,
+                                lng: 0,
+                                timestamp: new Date().toISOString()
+                            }
+                        });
+                        break;
+                }
+            } catch (error) {
+                console.error('Error processing SSE event:', error);
+            }
+        };
+
+        eventSource.onerror = (error) => {
+            console.error('SSE connection error:', error);
+            // Attempt to reconnect after a delay
+            setTimeout(() => this.setupSSE(), 5000);
+        };
     }
 
     private async loadInitialData() {
