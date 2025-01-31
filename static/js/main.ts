@@ -88,26 +88,51 @@ export class App {
             }
         }, async (data: PinsResponse) => {
             if (data.status === 'success') {
-                // Store current popup state
+                // Get current pins on the map
+                const currentMarkers = this.mapManager.getMarkers() as MarkerWithData[];
+                const currentPinIds = new Set(currentMarkers.map(m => m.pinId).filter(Boolean));
+                
+                // Get new pins from the response
+                const newPinIds = new Set(data.pins.map(p => p.id));
+                
+                // Store popup states before any changes
                 const openPopups = new Map<string, boolean>();
-                this.mapManager.getMarkers().forEach((marker) => {
-                    const markerWithData = marker as MarkerWithData;
-                    if (markerWithData.pinId) {
-                        openPopups.set(markerWithData.pinId, markerWithData.getPopup()?.isOpen() || false);
+                currentMarkers.forEach(marker => {
+                    if (marker.pinId) {
+                        openPopups.set(marker.pinId, marker.getPopup()?.isOpen() || false);
                     }
                 });
 
-                // Update pins on the map
-                this.mapManager.clearMarkers();
+                // Remove deleted pins
+                currentMarkers.forEach(marker => {
+                    if (marker.pinId && !newPinIds.has(marker.pinId)) {
+                        if (marker.labelMarker) {
+                            marker.labelMarker.remove();
+                        }
+                        this.mapManager.removeMarker(marker);
+                    }
+                });
+
+                // Update existing and add new pins
                 data.pins.forEach((pin: Pin) => {
-                    const marker = this.pinManager.addPinToMap(pin);
-                    if (marker) {
-                        const popupContent = this.pinManager.createPopupContent(pin, marker);
-                        marker.bindPopup(popupContent);
-                        
-                        // Restore popup state
-                        if (openPopups.get(pin.id)) {
-                            marker.openPopup();
+                    if (!currentPinIds.has(pin.id)) {
+                        // New pin
+                        const marker = this.pinManager.addPinToMap(pin);
+                        if (marker) {
+                            const popupContent = this.pinManager.createPopupContent(pin, marker);
+                            marker.bindPopup(popupContent);
+                        }
+                    } else {
+                        // Existing pin - update if needed
+                        const existingMarker = currentMarkers.find(m => m.pinId === pin.id);
+                        if (existingMarker) {
+                            const popupContent = this.pinManager.createPopupContent(pin, existingMarker);
+                            existingMarker.setPopupContent(popupContent);
+                            
+                            // Restore popup state
+                            if (openPopups.get(pin.id)) {
+                                existingMarker.openPopup();
+                            }
                         }
                     }
                 });
