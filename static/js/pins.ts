@@ -172,7 +172,16 @@ export class PinManager {
             const markers = this.mapManager.getMarkers();
             const marker = markers.find(m => (m as MarkerWithData).pinId === pinId) as MarkerWithData;
             const pinData = marker?.pinData;
+
+            // First, delete all connections associated with this pin
+            if (window.app?.connectionManager) {
+                const connections = window.app.connectionManager.findConnectionsForPin(pinId);
+                for (const connection of connections) {
+                    await window.app.connectionManager.deleteConnection(connection);
+                }
+            }
             
+            // Then delete the pin
             const response = await this.fetchApi(`${config.api.pins}/${pinId}`, {
                 method: 'DELETE',
             });
@@ -182,6 +191,10 @@ export class PinManager {
             
             // Remove marker from map
             if (marker) {
+                // Remove the label marker if it exists
+                if (marker.labelMarker) {
+                    marker.labelMarker.remove();
+                }
                 this.mapManager.removeMarker(marker);
             }
             
@@ -281,7 +294,7 @@ export class PinManager {
         return marker?.pinData;
     }
 
-    private createPopupContent(pin: Pin, marker: MarkerWithData): HTMLElement {
+    public createPopupContent(pin: Pin, marker: MarkerWithData): HTMLElement {
         const popupContent = document.createElement('div');
         popupContent.className = 'pin-popup';
         

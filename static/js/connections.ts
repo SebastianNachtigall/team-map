@@ -160,6 +160,22 @@ export class ConnectionManager {
                 // Draw the new connection
                 this.drawConnection(data.connection);
 
+                // Update both pins' popups
+                if (window.app?.pinManager) {
+                    const sourcePin = window.app.pinManager.findPinById(this.sourceMarker.pinId);
+                    const targetPin = window.app.pinManager.findPinById(targetMarker.pinId);
+                    
+                    if (sourcePin && this.sourceMarker) {
+                        const sourceContent = window.app.pinManager.createPopupContent(sourcePin, this.sourceMarker);
+                        this.sourceMarker.getPopup()?.setContent(sourceContent);
+                    }
+                    
+                    if (targetPin) {
+                        const targetContent = window.app.pinManager.createPopupContent(targetPin, targetMarker);
+                        targetMarker.getPopup()?.setContent(targetContent);
+                    }
+                }
+
                 // Reset source marker
                 if (this.sourceMarker) {
                     this.resetMarker(this.sourceMarker);
@@ -411,6 +427,37 @@ export class ConnectionManager {
 
                 // Remove from connections map
                 this.connections.delete(connectionId);
+
+                // Update both pins' popups
+                if (window.app?.pinManager) {
+                    // Find both markers
+                    const markers = this.mapManager.getMarkers();
+                    const sourceMarker = markers.find(m => 
+                        (m as MarkerWithData).pinId === connection.sourceId
+                    ) as MarkerWithData | undefined;
+                    
+                    const targetMarker = markers.find(m => 
+                        (m as MarkerWithData).pinId === connection.targetId
+                    ) as MarkerWithData | undefined;
+
+                    // Update source pin popup
+                    if (sourceMarker) {
+                        const sourcePin = window.app.pinManager.findPinById(connection.sourceId);
+                        if (sourcePin) {
+                            const sourceContent = window.app.pinManager.createPopupContent(sourcePin, sourceMarker);
+                            sourceMarker.getPopup()?.setContent(sourceContent);
+                        }
+                    }
+
+                    // Update target pin popup
+                    if (targetMarker) {
+                        const targetPin = window.app.pinManager.findPinById(connection.targetId);
+                        if (targetPin) {
+                            const targetContent = window.app.pinManager.createPopupContent(targetPin, targetMarker);
+                            targetMarker.getPopup()?.setContent(targetContent);
+                        }
+                    }
+                }
 
                 // Add to activity feed
                 if (window.app?.activityFeed) {
