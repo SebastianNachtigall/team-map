@@ -1,0 +1,17 @@
+{
+  "lat": 59.977005492196,
+  "lng": 50.537109375,
+  "name": "11",
+  "imageUrl": "https://media4.giphy.com/media/v1.Y2lkPTU1OWM5ZTFhcmhpMzAyNmpoOWxvOXo2NDB5anRtNHRxZnI5eTY0dTd6ejlya2ltOSZlcD12MV9naWZzX3JhbmRvbSZjdD1n/3bzHPDCs2mflpvj1fl/giphy.gif",
+  "timestamp": "2025-01-31T23:13:24.033758",
+  "location": "\u041a\u043e\u0439\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d",
+  "id": "94bdc0fa-0903-456a-818b-d8cb8452a18f",
+  "connections": [
+    {
+      "id": "f3d342e0-225c-42fd-afee-0d52eabe93a8",
+      "sourceId": "94bdc0fa-0903-456a-818b-d8cb8452a18f",
+      "targetId": "d1bd1ed2-e62f-439e-8f7b-617f9cce86e2",
+      "timestamp": "2025-01-31T23:13:30.565534"
+    }
+  ]
+}

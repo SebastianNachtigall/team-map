@@ -1,0 +1,17 @@
+{
+  "lat": 62.83508901142283,
+  "lng": 8.613281250000002,
+  "name": "wednesday",
+  "imageUrl": "https://media4.giphy.com/media/v1.Y2lkPTU1OWM5ZTFhemdzdmRpMmpuZWxsMnluc3pvcm54ODBhM3VjbXB5c2JhNTRkdWt2dyZlcD12MV9naWZzX3JhbmRvbSZjdD1n/WUlpg5e82o2OWAo5Tr/giphy.gif",
+  "timestamp": "2025-01-31T23:09:33.369622",
+  "location": "M\u00f8re og Romsdal",
+  "id": "5cd555e5-0238-417c-96f4-8002b10a2489",
+  "connections": [
+    {
+      "id": "39617ff2-e93d-45b7-9c89-f81e746a53ba",
+      "sourceId": "dd0129ae-8536-445c-806d-994a65d76a1f",
+      "targetId": "5cd555e5-0238-417c-96f4-8002b10a2489",
+      "timestamp": "2025-01-31T23:30:52.506784"
+    }
+  ]
+}

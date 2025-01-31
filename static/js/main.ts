@@ -2,8 +2,9 @@ import { MapManager } from './map';
 import { ConnectionManager } from './connections';
 import { PinManager } from './pins';
 import { ActivityFeed } from './activity';
-import { Pin, MarkerWithData } from './types';
+import { Pin, MarkerWithData, PinsResponse } from './types';
 import { config } from './config';
+import { PollingManager } from './utils/polling';
 
 declare global {
     interface Window {
@@ -16,6 +17,7 @@ export class App {
     public pinManager: PinManager;
     public connectionManager: ConnectionManager;
     public activityFeed: ActivityFeed;
+    private pollingManager: PollingManager;
 
     private async fetchApi(endpoint: string, options: RequestInit = {}) {
         const response = await fetch(endpoint, {
@@ -33,6 +35,10 @@ export class App {
 
     constructor() {
         console.log('Initializing App...');
+        
+        // Initialize polling manager
+        console.log('Initializing PollingManager...');
+        this.pollingManager = new PollingManager();
         
         // Initialize managers
         console.log('Initializing MapManager...');
@@ -65,8 +71,53 @@ export class App {
             .catch(error => {
                 console.error('Error loading initial data:', error);
             });
+            
+        // Start polling for pins
+        this.startPolling();
         
         console.log('App initialization complete');
+    }
+
+    private startPolling() {
+        // Start polling for pins every 2 seconds
+        this.pollingManager.startPolling<PinsResponse>({
+            endpoint: config.api.pins,
+            interval: 2000,
+            onError: (error) => {
+                console.error('Polling error:', error);
+            }
+        }, async (data: PinsResponse) => {
+            if (data.status === 'success') {
+                // Store current popup state
+                const openPopups = new Map<string, boolean>();
+                this.mapManager.getMarkers().forEach((marker) => {
+                    const markerWithData = marker as MarkerWithData;
+                    if (markerWithData.pinId) {
+                        openPopups.set(markerWithData.pinId, markerWithData.getPopup()?.isOpen() || false);
+                    }
+                });
+
+                // Update pins on the map
+                this.mapManager.clearMarkers();
+                data.pins.forEach((pin: Pin) => {
+                    const marker = this.pinManager.addPinToMap(pin);
+                    if (marker) {
+                        const popupContent = this.pinManager.createPopupContent(pin, marker);
+                        marker.bindPopup(popupContent);
+                        
+                        // Restore popup state
+                        if (openPopups.get(pin.id)) {
+                            marker.openPopup();
+                        }
+                    }
+                });
+
+                // Update connections
+                if (window.app?.connectionManager) {
+                    window.app.connectionManager.loadConnections();
+                }
+            }
+        });
     }
 
     private async loadInitialData() {

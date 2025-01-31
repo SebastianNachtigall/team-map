@@ -1,56 +1,129 @@
 # System Patterns
 
-## Architecture Patterns
+## Architecture Overview
 
-### 1. Component-Based Architecture
-- Main application split into logical managers:
-  * MapManager: Handles map initialization and interaction
-  * PinManager: Manages pin creation and lifecycle
-  * ConnectionManager: Handles connections between pins
-  * ActivityFeed: Manages real-time activity updates
+### Frontend Architecture
+1. Manager Pattern
+   - Core managers for different concerns:
+     - MapManager: Handles map initialization and interactions
+     - PinManager: Manages pin creation, updates, and deletion
+     - ConnectionManager: Handles connections between pins
+     - ActivityFeed: Manages real-time activity updates
 
-### 2. Event-Driven Communication
-- Server-Sent Events (SSE) for real-time updates
-- Broadcaster pattern for distributing updates
-- Event-based UI interactions
-- Pub/sub pattern for state changes
+2. Event-Driven Communication
+   - Server-Sent Events for real-time updates
+   - Custom event system for inter-manager communication
+   - Centralized event handling in App class
 
-### 3. File-Based Storage Pattern
-- JSON files as persistent storage for pins
-- Each pin file contains:
-  * Basic pin data (location, name, etc.)
-  * Incoming connections from other pins
-  * Outgoing connections to other pins
-- Real-time file system synchronization
+3. TypeScript Type System
+   - Strong typing for data structures
+   - Interface definitions for API responses
+   - Type guards for runtime safety
+
+### Backend Architecture
+1. Flask Application Structure
+   - RESTful API endpoints
+   - File-based JSON storage
+   - Real-time event broadcasting
+   - Geocoding service integration
+
+2. Data Storage Pattern
+   - Individual JSON files for pins
+   - Embedded connections within pin files
+   - In-memory caching for performance
+   - File system as persistent storage
 
 ## Key Technical Decisions
 
-### 1. Map Implementation
-- Leaflet.js chosen for:
-  * Lightweight and performant
-  * Extensive customization options
-  * Good TypeScript support
-  * Free OpenStreetMap integration
+### 1. File-Based Storage
+- Decision: Use file system instead of database
+- Rationale:
+  - Simple deployment without database setup
+  - Easy backup and version control
+  - Sufficient for expected data volume
+  - Direct file access for better performance
 
-### 2. Backend Architecture
-- Flask for simplicity and ease of deployment
-- File-based storage instead of database for:
-  * Simplified deployment
-  * No database administration needed
-  * Easy backup and version control
-  * Efficient connection management within pin data
-  * Sufficient for expected data volume
+### 2. Real-Time Updates
+- Decision: Server-Sent Events over WebSockets
+- Rationale:
+  - Simpler implementation than WebSockets
+  - One-way communication sufficient
+  - Better browser support
+  - Automatic reconnection handling
 
-### 3. Real-Time Updates
-- SSE preferred over WebSocket for:
-  * Simpler implementation
-  * One-way communication sufficient
-  * Better reconnection handling
-  * Native browser support
+### 3. Map Implementation
+- Decision: Leaflet.js with OpenStreetMap
+- Rationale:
+  - Open-source and free to use
+  - Extensive documentation
+  - Good performance
+  - Rich feature set
+  - Custom control support
 
-### 4. UI/UX Patterns
-- Responsive design with mobile support
-- Interactive markers with popups
-- Visual feedback for user actions
-- Animated connections for engagement
-- Modular CSS organization
+### 4. TypeScript Integration
+- Decision: Full TypeScript implementation
+- Rationale:
+  - Type safety during development
+  - Better IDE support
+  - Easier refactoring
+  - Self-documenting code
+
+## Design Patterns Used
+
+### 1. Manager Pattern
+- Separates concerns into distinct managers
+- Each manager handles specific functionality
+- Centralized coordination through App class
+
+### 2. Observer Pattern
+- Used for real-time updates
+- Broadcaster class manages subscriptions
+- Event-based communication between components
+
+### 3. Factory Pattern
+- Creation of markers and connections
+- Standardized object initialization
+- Encapsulated creation logic
+
+### 4. Singleton Pattern
+- Single App instance
+- Shared manager instances
+- Centralized state management
+
+## Code Organization
+
+### Frontend Structure
+```
+static/
+├── css/
+│   ├── components/    # Component-specific styles
+│   └── main.css       # Global styles
+└── js/
+    ├── utils/         # Utility functions
+    ├── types.ts       # TypeScript definitions
+    ├── config.ts      # Configuration
+    ├── main.ts        # Application entry
+    ├── map.ts         # Map functionality
+    ├── pins.ts        # Pin management
+    └── connections.ts # Connection handling
+```
+
+### Backend Structure
+```
+/
+├── app.py            # Main Flask application
+├── pins/             # Pin storage directory
+├── connections/      # Connection storage directory
+└── static/           # Static files served by Flask
+```
+
+## Error Handling
+1. Frontend
+   - Type-safe error handling
+   - Graceful degradation
+   - User-friendly error messages
+
+2. Backend
+   - Structured error responses
+   - Logging system
+   - Rate limiting handling

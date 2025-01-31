@@ -1,61 +1,90 @@
 # Technical Context
 
-## Technologies Used
+## Technology Stack
 
 ### Frontend
-- TypeScript/JavaScript
-- Leaflet.js for map visualization
-- Server-Sent Events (SSE) for real-time updates
-- HTML5/CSS3 for UI components
+- TypeScript for type-safe JavaScript development
+- Leaflet.js for interactive map functionality
+- Vite as the build tool and development server
+- ESLint for code linting
+- Jest for testing
 
 ### Backend
-- Python with Flask framework
-- File-based JSON storage
-- OpenStreetMap for map tiles
-- Nominatim API for reverse geocoding
-- GIPHY API integration for GIF support
+- Python 3 with Flask web framework
+- Server-Sent Events (SSE) for real-time updates
+- Gunicorn as the WSGI HTTP server
+- OpenStreetMap for geocoding services
+- Giphy API integration for GIF support
 
 ## Development Setup
-1. Python Environment
-   - Python 3.x required
-   - Dependencies managed via pip
-   - Requirements listed in requirements.txt
 
-2. Node.js Environment
-   - Node.js and npm required
-   - TypeScript compilation
-   - Vite for development server and building
+### Prerequisites
+1. Python 3.x
+2. Node.js and npm
+3. Environment Variables:
+   - GIPHY_API_KEY: Required for GIF functionality
+   - PORT: Optional, defaults to 5002
 
-3. Environment Variables
-   - GIPHY_API_KEY for GIF integration
-   - PORT configuration (default: 5002)
+### Installation Steps
+1. Install Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-4. Development Tools
-   - Jest for testing
-   - ESLint for code linting
-   - Docker support for containerization
-   - Railway deployment configuration
+2. Install Node.js dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Application
+1. Start the Flask backend:
+   ```bash
+   python app.py
+   ```
+   - Runs on port 5002 by default
+   - Handles API requests and serves static files
+
+2. Start the Vite development server:
+   ```bash
+   npm run dev
+   ```
+   - Provides hot module replacement
+   - Compiles TypeScript in real-time
 
 ## Technical Constraints
-1. Storage
-   - File-based JSON storage system for pins
-   - Each pin file contains its own connections
-   - No database required
-   - Real-time synchronization handled through SSE
-   - Efficient bi-directional connection tracking within pins
 
-2. API Limitations
-   - Nominatim usage policy requires rate limiting
-   - GIPHY API requires valid API key
-   - No authentication system implemented
+### Backend
+1. Rate Limiting
+   - OpenStreetMap geocoding requires 1-second delay between requests
+   - Giphy API has rate limits based on API key
 
-3. Browser Support
-   - Modern browsers with ES6+ support
-   - CSS Grid and Flexbox for layouts
-   - WebSocket/SSE capability required
+2. Data Storage
+   - Uses file-based storage in JSON format
+   - Pins stored in individual files under pins/ directory
+   - Connections stored within pin files
 
-4. Performance Considerations
-   - Client-side rendering of map markers
-   - Efficient connection visualization
-   - Optimized real-time updates
-   - Caching for reverse geocoding results
+3. Real-time Updates
+   - Uses Server-Sent Events for live updates
+   - Maintains client connections in memory
+   - Broadcasts updates to all connected clients
+
+### Frontend
+1. Browser Support
+   - Requires modern browser with ES6+ support
+   - CSS Grid and Flexbox for layout
+   - WebSocket support for real-time updates
+
+2. Map Constraints
+   - Uses OpenStreetMap tiles
+   - Limited to web Mercator projection
+   - Marker clustering not implemented
+
+3. Performance Considerations
+   - Lazy loading of images
+   - Debounced map interactions
+   - Connection animations optimized for performance
+
+## Deployment
+- Containerized with Docker
+- Railway.toml configuration for deployment
+- Environment variables required for production setup

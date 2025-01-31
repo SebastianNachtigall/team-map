@@ -45,3 +45,19 @@ export interface ApiResponse<T> {
     data?: T;
     message?: string;
 }
+
+export interface PinsResponse extends ApiResponse<never> {
+    pins: Pin[];
+}
+
+export interface ConnectionsResponse extends ApiResponse<never> {
+    connections: Connection[];
+}
+
+export interface SinglePinResponse extends ApiResponse<never> {
+    pin: Pin;
+}
+
+export interface SingleConnectionResponse extends ApiResponse<never> {
+    connection: Connection;
+}
