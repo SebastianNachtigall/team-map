@@ -48,6 +48,24 @@
   * Better reconnection handling
   * Native browser support
 
+### 4. Real-Time Implementation Details
+- Frontend SSE Client:
+  * Configured through config.ts for environment awareness
+  * Automatic reconnection with 5-second delay
+  * Event-specific handlers for different update types
+  * Error handling with logging
+
+- Event Types:
+  * pin_added: Triggers PinManager.handleNewPin
+  * connection_added: Triggers ConnectionManager.handleNewConnection
+  * activity_update: Updates activity feed
+
+- State Management:
+  * In-memory pin tracking in PinManager
+  * Connection state in ConnectionManager
+  * Duplicate prevention for all events
+  * Real-time UI updates without page reloads
+
 ### 4. UI/UX Patterns
 - Responsive design with mobile support
 - Interactive markers with popups

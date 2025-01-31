@@ -4,6 +4,9 @@
 - ✅ Pin deletion now properly updates UI without requiring page reload
 - ✅ Pin deletion now shows in activity feed
 - ✅ Connection deletion properly updates UI and activity feed
+- ✅ Real-time collaboration now works in Docker environment
+- ✅ SSE endpoint configuration uses environment-aware API URLs
+- ✅ Automatic SSE reconnection on connection loss
 
 ## Completed Features
 
@@ -21,9 +24,21 @@
 
 ### Real-Time Features
 - ✅ Server-Sent Events implementation
+  * Environment-aware configuration
+  * Automatic reconnection handling
+  * Error logging and recovery
 - ✅ Real-time pin updates
+  * Instant pin creation across clients
+  * Duplicate prevention
+  * Proper state management
 - ✅ Real-time connection updates
+  * Live connection drawing
+  * State synchronization
+  * Visual feedback
 - ✅ Activity feed
+  * Live updates across all clients
+  * Event-specific formatting
+  * Timestamp localization
 
 ### UI Components
 - ✅ Responsive layout

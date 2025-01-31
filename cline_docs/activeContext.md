@@ -1,9 +1,18 @@
 # Active Context
 
 ## Current Task
-No active tasks - all recent bugs have been fixed.
+Implementing real-time collaboration features to enable instant updates across all clients without page reloads.
 
 ## Recent Changes
+- Added Server-Sent Events (SSE) implementation:
+  * Frontend SSE client in main.ts using environment-aware config
+  * Real-time pin updates via handleNewPin in PinManager
+  * Real-time connection updates via handleNewConnection in ConnectionManager
+  * Live activity feed updates across all clients
+- Enhanced configuration:
+  * Added stream endpoint to config.ts
+  * Uses same API_BASE_URL pattern as other endpoints
+  * Docker environment compatible
 - Fixed pin deletion UI update issue:
   * Pins now properly removed from map without page reload
   * Activity feed shows pin deletion events
