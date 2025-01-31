@@ -167,12 +167,29 @@ export class PinManager {
     public async deletePin(pinId: string): Promise<void> {
         try {
             console.log('Deleting pin:', pinId);
+            
+            // Find the marker before deleting
+            const markers = this.mapManager.getMarkers();
+            const marker = markers.find(m => (m as MarkerWithData).pinId === pinId) as MarkerWithData;
+            const pinData = marker?.pinData;
+            
             const response = await this.fetchApi(`${config.api.pins}/${pinId}`, {
                 method: 'DELETE',
             });
             if (response.status !== 'success') {
                 throw new Error('Failed to delete pin');
             }
+            
+            // Remove marker from map
+            if (marker) {
+                this.mapManager.removeMarker(marker);
+            }
+            
+            // Add to activity feed
+            if (pinData) {
+                window.app?.activityFeed?.addActivity('pin_deleted', { pin: pinData });
+            }
+            
             console.log('Pin deleted:', pinId);
         } catch (error) {
             console.error('Error deleting pin:', error);

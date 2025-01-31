@@ -3,14 +3,18 @@ import { MapManager } from './map';
 import { MarkerWithData } from './types';
 import { config } from './config';
 
-interface Connection {
-    sourceId: string;
-    targetId: string;
-    sourceName: string;
-    targetName: string;
-}
+import { Connection } from './types';
 
 export class ConnectionManager {
+    private highlightMarker(marker: MarkerWithData) {
+        const icon = marker.getIcon() as L.Icon;
+        marker.setOpacity(0.8);
+    }
+
+    private resetMarker(marker: MarkerWithData) {
+        marker.setOpacity(1);
+    }
+
     private mapManager: MapManager;
     private connections: Map<string, Connection> = new Map();
     private connectionLines: L.Path[] = [];
@@ -120,13 +124,13 @@ export class ConnectionManager {
         if (!this.sourceMarker) {
             // First click - set source marker
             this.sourceMarker = marker;
-            marker.setStyle({ color: 'yellow' });  // Highlight selected marker
+            this.highlightMarker(marker);
             return;
         }
 
         if (this.sourceMarker === marker) {
             // Clicked same marker twice - deselect
-            this.sourceMarker.setStyle({ color: 'red' });  // Reset color
+            this.resetMarker(marker);
             this.sourceMarker = null;
             return;
         }
@@ -138,7 +142,7 @@ export class ConnectionManager {
         const existingConnection = this.findConnection(this.sourceMarker.pinId, targetMarker.pinId);
         if (existingConnection) {
             console.log('Connection already exists');
-            this.sourceMarker.setStyle({ color: 'red' });  // Reset color
+            this.resetMarker(this.sourceMarker);
             this.sourceMarker = null;
             return;
         }
@@ -157,27 +161,22 @@ export class ConnectionManager {
                 this.drawConnection(data.connection);
 
                 // Reset source marker
-                this.sourceMarker.setStyle({ color: 'red' });
-                this.sourceMarker = null;
+                if (this.sourceMarker) {
+                    this.resetMarker(this.sourceMarker);
+                    this.sourceMarker = null;
+                }
 
                 // Add activity
-                if (window.app && window.app.activityFeed) {
-                    window.app.activityFeed.addActivity({
-                        type: 'connection_created',
-                        timestamp: new Date().toISOString(),
-                        data: {
-                            sourceId: data.connection.sourceId,
-                            targetId: data.connection.targetId,
-                            sourceName: data.connection.sourceName,
-                            targetName: data.connection.targetName
-                        }
+                if (window.app?.activityFeed) {
+                    window.app.activityFeed.addActivity('connection_created', {
+                        connection: data.connection
                     });
                 }
             }
         } catch (error) {
             console.error('Error creating connection:', error);
             if (this.sourceMarker) {
-                this.sourceMarker.setStyle({ color: 'red' });
+                this.resetMarker(this.sourceMarker);
                 this.sourceMarker = null;
             }
         }
@@ -380,6 +379,57 @@ export class ConnectionManager {
         return line;
     }
 
+    public async deleteConnection(connection: Connection, metadata?: {
+        initiatorPinId: string;
+        initiatorPinName: string;
+        otherPinName: string;
+    }): Promise<void> {
+        try {
+            const response = await this.fetchApi(
+                `${config.api.connections}/${connection.sourceId}/${connection.targetId}`,
+                { method: 'DELETE' }
+            );
+
+            if (response.status === 'success') {
+                // Remove the connection line and heart
+                const connectionId = `${connection.sourceId}-${connection.targetId}`;
+                const lineIndex = this.connectionLines.findIndex(line => {
+                    const conn = (line as any).options.connection;
+                    return conn && conn.sourceId === connection.sourceId && conn.targetId === connection.targetId;
+                });
+
+                if (lineIndex !== -1) {
+                    const line = this.connectionLines[lineIndex];
+                    line.remove();
+                    this.connectionLines.splice(lineIndex, 1);
+
+                    if (this.connectionHearts[lineIndex]) {
+                        this.connectionHearts[lineIndex].remove();
+                        this.connectionHearts.splice(lineIndex, 1);
+                    }
+                }
+
+                // Remove from connections map
+                this.connections.delete(connectionId);
+
+                // Add to activity feed
+                if (window.app?.activityFeed) {
+                    window.app.activityFeed.addActivity('connection_deleted', {
+                        connection: {
+                            id: connection.id,
+                            sourceId: connection.sourceId,
+                            targetId: connection.targetId,
+                            timestamp: connection.timestamp
+                        }
+                    });
+                }
+            }
+        } catch (error) {
+            console.error('Error deleting connection:', error);
+            throw error;
+        }
+    }
+
     public clearConnections() {
         // Remove all lines
         this.connectionLines.forEach(line => {
@@ -393,9 +443,9 @@ export class ConnectionManager {
             heart.remove();
         });
         
-        // Clear arrays
+        // Clear arrays and map
         this.connectionLines = [];
         this.connectionHearts = [];
-        this.connections = [];
+        this.connections.clear();
     }
 }

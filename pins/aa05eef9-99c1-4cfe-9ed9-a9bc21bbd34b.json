@@ -6,5 +6,18 @@
   "timestamp": "2025-01-30T00:49:07.754344",
   "location": "Donzy",
   "id": "aa05eef9-99c1-4cfe-9ed9-a9bc21bbd34b",
-  "connections": []
+  "connections": [
+    {
+      "id": "91df796b-6f7e-448c-8d5a-1d1a0d8f0b31",
+      "sourceId": "5404ef5b-172b-4c94-a805-0ce0fdb17683",
+      "targetId": "aa05eef9-99c1-4cfe-9ed9-a9bc21bbd34b",
+      "timestamp": "2025-01-31T13:17:09.672899"
+    },
+    {
+      "id": "cd1eaf27-d68c-4321-89e1-dbb40bed1d37",
+      "sourceId": "aa05eef9-99c1-4cfe-9ed9-a9bc21bbd34b",
+      "targetId": "fa568291-608f-47d9-a344-c79173e7dd43",
+      "timestamp": "2025-01-31T13:26:08.371398"
+    }
+  ]
 }
