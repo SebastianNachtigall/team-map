@@ -123,8 +123,13 @@ export class PinManager {
                 // Clear existing markers
                 this.mapManager.clearMarkers();
                 
+                // Sort pins by timestamp in descending order (newest first)
+                const sortedPins = [...response.pins].sort((a, b) => 
+                    new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+                );
+
                 // Add each pin to the map
-                response.pins.forEach((pin: Pin) => {
+                sortedPins.forEach((pin: Pin) => {
                     const marker = this.addPinToMap(pin);
                     if (marker) {
                         const popupContent = this.createPopupContent(pin, marker);
