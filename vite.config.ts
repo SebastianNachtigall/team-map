@@ -3,8 +3,8 @@ import { resolve } from 'path';
 
 export default defineConfig({
   root: '.',
-  base: '/',
-  publicDir: false,  // Disable automatic static file serving
+  base: './',
+  publicDir: 'static',
   server: {
     host: '0.0.0.0',
     port: 5173,
@@ -52,14 +52,15 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: true,
+    assetsDir: 'assets',
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'static/js/main.ts')
       },
       output: {
-        entryFileNames: 'assets/[name].js',
-        chunkFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]'
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
       }
     }
   }
