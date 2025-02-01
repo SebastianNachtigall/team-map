@@ -3,7 +3,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
   root: '.',
-  base: './',
+  base: '/',
   publicDir: 'static',
   server: {
     host: '0.0.0.0',
