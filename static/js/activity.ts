@@ -1,4 +1,4 @@
-import { Activity, Pin, Connection } from './types';
+import { Activity, Pin, Connection, ConnectionData } from './types';
 import { sanitizeText } from './utils/helpers';
 
 export class ActivityFeed {
@@ -8,15 +8,16 @@ export class ActivityFeed {
 
     constructor(feedElementId: string) {
         console.log('Initializing ActivityFeed with element ID:', feedElementId);
-        this.feedElement = document.getElementById(feedElementId);
-        if (!this.feedElement) {
+        const element = document.getElementById(feedElementId);
+        if (!element) {
             console.error(`Activity feed element with id ${feedElementId} not found`);
             throw new Error(`Activity feed element with id ${feedElementId} not found`);
         }
+        this.feedElement = element;
         console.log('ActivityFeed initialized with element:', this.feedElement);
     }
 
-    public addActivity(type: Activity['type'], data?: { pin?: Pin; connection?: Connection }, isExisting: boolean = false) {
+    public addActivity(type: Activity['type'], data: ConnectionData = {}, isExisting: boolean = false) {
         console.log('Adding activity:', { type, data, isExisting });
         
         // Check for duplicate activity only for new items
@@ -83,18 +84,39 @@ export class ActivityFeed {
         const activity: Activity = {
             id: crypto.randomUUID(),
             type,
-            data,
-            timestamp: isExisting ? data?.pin?.timestamp || new Date().toISOString() : new Date().toISOString(),
+            data: { ...data },
+            timestamp: isExisting && data.pin?.timestamp ? data.pin.timestamp : new Date().toISOString(),
             message: activityText
         };
 
         console.log('Created activity:', activity);
-        this.activities.unshift(activity);
+        
+        // Add activity to the array
+        this.activities.push(activity);
+        
+        // Sort activities by timestamp in descending order
+        this.activities.sort((a, b) => 
+            new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+        );
+        
+        // Trim to max activities
         if (this.activities.length > this.maxActivities) {
-            this.activities.pop();
+            this.activities = this.activities.slice(0, this.maxActivities);
         }
 
-        this.addActivityToDOM(activity);
+        // Clear and rebuild the DOM with sorted activities
+        this.feedElement.innerHTML = '';
+        this.activities.forEach(act => {
+            const activityItem = this.createActivityItem(act);
+            activityItem.classList.add('new');
+            if (act.type === 'pin_deleted') {
+                activityItem.classList.add('removed');
+            }
+            this.feedElement.appendChild(activityItem);
+            setTimeout(() => {
+                activityItem.classList.add('show');
+            }, 100);
+        });
     }
 
     private formatTimestamp(timestamp: string): string {

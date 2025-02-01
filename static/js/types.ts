@@ -8,6 +8,7 @@ export interface Pin {
     imageUrl?: string;
     location?: string;
     connections?: Connection[];
+    timestamp: string;
 }
 
 export interface Connection {
@@ -23,14 +24,19 @@ export interface MarkerWithData extends L.Marker {
     labelMarker?: L.Marker;  // Optional label marker associated with this marker
 }
 
+export interface ConnectionData {
+    pin?: Pin;
+    connection?: Connection;
+    firstPinName?: string;
+    secondPinName?: string;
+}
+
 export interface Activity {
     id: string;
     type: 'pin_created' | 'pin_deleted' | 'connection_created' | 'connection_deleted';
     timestamp: string;
-    data: {
-        pin?: Pin;
-        connection?: Connection;
-    };
+    data: ConnectionData;
+    message: string;
 }
 
 export interface MapConfig {
