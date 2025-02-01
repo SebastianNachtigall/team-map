@@ -127,3 +127,59 @@ static/
    - Structured error responses
    - Logging system
    - Rate limiting handling
+
+## Build and Asset Patterns
+
+### Asset Organization
+1. Development
+   - Static assets in source control
+   - CSS organized by component
+   - Direct TypeScript imports
+   - Local file serving
+
+2. Production
+   - Hashed asset filenames
+   - Bundled and minified code
+   - Preserved CSS structure
+   - Optimized loading
+
+### Build Process Pattern
+1. Development Build
+   ```
+   Source Files → Vite Dev Server → Hot Module Replacement
+        ↓
+   Docker Volume → Live Updates → Instant Feedback
+   ```
+
+2. Production Build
+   ```
+   Source Files → Vite Build → Optimized Assets
+        ↓
+   Docker Image → Flask Static Serving → Production Deploy
+   ```
+
+### Environment Configuration Pattern
+1. Local Development
+   - Docker Compose orchestration
+   - Volume mounting for live updates
+   - Development-specific Vite config
+   - Local environment variables
+
+2. Production Deployment
+   - Multi-stage Docker builds
+   - Railway-specific configuration
+   - Production Vite settings
+   - Secure environment variables
+
+### Asset Path Resolution Pattern
+1. Development
+   - Relative paths for assets
+   - Direct source file access
+   - HMR for instant updates
+   - Proxy for API requests
+
+2. Production
+   - Absolute paths from root
+   - Hashed file names
+   - Cached static assets
+   - Direct API access

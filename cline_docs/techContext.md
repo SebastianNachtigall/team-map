@@ -84,7 +84,50 @@
    - Debounced map interactions
    - Connection animations optimized for performance
 
-## Deployment
-- Containerized with Docker
-- Railway.toml configuration for deployment
-- Environment variables required for production setup
+## Deployment & Configuration
+
+### Docker Setup
+- Multi-stage Dockerfile for development and production
+- Development stage includes hot-reloading and debugging tools
+- Production stage optimized for performance
+- Docker Compose for local development:
+  ```yaml
+  services:
+    web:
+      build:
+        context: .
+        target: development
+      volumes:
+        - .:/app
+      ports:
+        - "5173:5173"
+        - "5002:5002"
+  ```
+
+### Vite Configuration
+- Different base URLs for development and production:
+  - Development: Uses relative paths (./)
+  - Production: Uses absolute paths (/)
+- Asset handling:
+  - CSS files maintain original structure
+  - JavaScript bundled in assets directory
+  - Source maps enabled for debugging
+- Build output:
+  ```
+  dist/
+    ├── index.html
+    ├── static/
+    │   └── css/
+    └── assets/
+        └── [name].[hash].js
+  ```
+
+### Environment-Specific Configuration
+- Development:
+  - Uses Vite dev server with HMR
+  - Proxies API requests to Flask backend
+  - Supports source maps and debugging
+- Production (Railway):
+  - Static files served by Flask
+  - Assets properly hashed for caching
+  - Environment variables for API keys and configuration
