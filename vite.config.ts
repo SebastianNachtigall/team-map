@@ -54,17 +54,18 @@ export default defineConfig({
     sourcemap: true,
     assetsDir: 'assets',
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html')
-      },
+      input: resolve(__dirname, 'index.html'),
       output: {
         entryFileNames: 'assets/[name].[hash].js',
         chunkFileNames: 'assets/[name].[hash].js',
         assetFileNames: (assetInfo) => {
-          const fileName = assetInfo.name || '';
-          // Keep CSS files in their original structure
-          if (fileName.endsWith('.css')) {
-            return fileName;
+          if (!assetInfo.name) return 'assets/[name].[hash].[ext]';
+          
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          
+          if (ext === 'css') {
+            return `static/css/[name].[hash].[ext]`;
           }
           return 'assets/[name].[hash].[ext]';
         }
