@@ -46,7 +46,7 @@ export class ActivityFeed {
         switch (type) {
             case 'pin_created':
                 if (data?.pin) {
-                    activityText = `📍 Created pin "${sanitizeText(data.pin.name)}"${data.pin.location ? ` in ${sanitizeText(data.pin.location)}` : ''}`;
+                    activityText = `${sanitizeText(data.pin.name)} dropped a pin${data.pin.location ? ` near ${sanitizeText(data.pin.location)}` : ''}`;
                 }
                 break;
             case 'pin_deleted':
