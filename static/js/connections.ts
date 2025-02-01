@@ -506,4 +506,8 @@ export class ConnectionManager {
         
         console.log('All connections cleared');
     }
+
+    public getConnections(): Connection[] {
+        return Array.from(this.connections.values());
+    }
 }

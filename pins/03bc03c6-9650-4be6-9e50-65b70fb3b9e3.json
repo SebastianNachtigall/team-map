@@ -5,5 +5,19 @@
   "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTU1OWM5ZTFhdmhxbjVseGdkbDVuaXdzdmsxbzk0YWF0ejN4bXFxcDR4aDA2ZjVmayZlcD12MV9naWZzX3JhbmRvbSZjdD1n/SI9qKcXFw35kAH7Acf/giphy.gif",
   "timestamp": "2025-02-01T00:00:45.843971",
   "location": "\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u043e\u0439 \u043e\u043a\u0440\u0443\u0433 \u0421\u043e\u043b\u043d\u0435\u0447\u043d\u043e\u0433\u043e\u0440\u0441\u043a",
-  "id": "03bc03c6-9650-4be6-9e50-65b70fb3b9e3"
+  "id": "03bc03c6-9650-4be6-9e50-65b70fb3b9e3",
+  "connections": [
+    {
+      "id": "878c68a9-74e1-4f14-b1a8-74a79fdfee28",
+      "sourceId": "a9903a23-e218-4c9a-8d4b-9d90d6bb7274",
+      "targetId": "03bc03c6-9650-4be6-9e50-65b70fb3b9e3",
+      "timestamp": "2025-02-01T09:09:31.030970"
+    },
+    {
+      "id": "6027b6ac-382e-4c70-8962-e0a91c02b144",
+      "sourceId": "03bc03c6-9650-4be6-9e50-65b70fb3b9e3",
+      "targetId": "7a8a4565-d2a0-44fd-ba6d-702b55477927",
+      "timestamp": "2025-02-01T09:09:34.298648"
+    }
+  ]
 }

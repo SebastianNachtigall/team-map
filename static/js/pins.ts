@@ -294,6 +294,12 @@ export class PinManager {
         return marker?.pinData;
     }
 
+    public getPins(): Pin[] {
+        return this.mapManager.getMarkers()
+            .filter(m => (m as MarkerWithData).pinData)
+            .map(m => (m as MarkerWithData).pinData);
+    }
+
     public createPopupContent(pin: Pin, marker: MarkerWithData): HTMLElement {
         const popupContent = document.createElement('div');
         popupContent.className = 'pin-popup';

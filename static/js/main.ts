@@ -2,9 +2,10 @@ import { MapManager } from './map';
 import { ConnectionManager } from './connections';
 import { PinManager } from './pins';
 import { ActivityFeed } from './activity';
-import { Pin, MarkerWithData, PinsResponse } from './types';
+import { Pin, MarkerWithData, PinsResponse, Connection } from './types';
 import { config } from './config';
 import { PollingManager } from './utils/polling';
+import { SnapshotGenerator } from './utils/snapshot';
 
 declare global {
     interface Window {
@@ -177,6 +178,28 @@ export class App {
         }
     }
 
+    private generateSnapshot() {
+        try {
+            console.log('Generating snapshot...');
+            const pins = this.pinManager.getPins();
+            console.log('Pins for snapshot:', pins);
+            
+            const connections = this.connectionManager.getConnections();
+            console.log('Connections for snapshot:', connections);
+            
+            const map = this.mapManager.getMap();
+            console.log('Map for snapshot:', map.getCenter(), map.getZoom());
+
+            console.log('Creating snapshot generator...');
+            const snapshotGenerator = new SnapshotGenerator(pins, connections, map);
+            
+            console.log('Downloading snapshot...');
+            snapshotGenerator.downloadSnapshot();
+        } catch (error) {
+            console.error('Error generating snapshot:', error);
+        }
+    }
+
     private setupEventListeners() {
         // Clear any existing event listeners
         const existingElements = document.querySelectorAll('[data-has-listeners]');
@@ -192,6 +215,18 @@ export class App {
         });
 
         console.log('Setting up event listeners...');
+
+        // Download button
+        const downloadBtn = document.getElementById('downloadBtn');
+        if (downloadBtn) {
+            console.log('Setting up download button listener');
+            downloadBtn.addEventListener('click', () => {
+                console.log('Download button clicked');
+                this.generateSnapshot();
+            });
+        } else {
+            console.warn('Download button not found in DOM');
+        }
         
         // Sidebar toggle
         const sidebarToggle = document.getElementById('sidebarToggle');
