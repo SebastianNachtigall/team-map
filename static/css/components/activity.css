@@ -1,14 +1,14 @@
 .activity-feed {
     flex: 1;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    min-height: 0;
 }
 
 .activity-list {
     flex: 1;
     overflow-y: auto;
+    margin: 0;
 }
 
 .activity-item {
