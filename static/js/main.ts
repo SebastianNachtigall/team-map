@@ -237,6 +237,64 @@ export class App {
             });
         }
         
+        // Settings button and dropdown
+        const settingsBtn = document.getElementById('settingsBtn');
+        const settingsDropdown = document.getElementById('settingsDropdown');
+        if (settingsBtn && settingsDropdown) {
+            // Toggle dropdown on settings button click
+            settingsBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                settingsDropdown.classList.toggle('active');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', () => {
+                settingsDropdown.classList.remove('active');
+            });
+
+            // Prevent dropdown from closing when clicking inside it
+            settingsDropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+
+        // Download pins button
+        const downloadPinsBtn = document.getElementById('downloadPinsBtn');
+        if (downloadPinsBtn) {
+            downloadPinsBtn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                try {
+                    const response = await fetch(config.api.downloadPins);
+                    if (!response.ok) {
+                        throw new Error('Failed to download pins');
+                    }
+                    
+                    // Get the blob from the response
+                    const blob = await response.blob();
+                    
+                    // Create a URL for the blob
+                    const url = window.URL.createObjectURL(blob);
+                    
+                    // Create a temporary link and click it to download
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'pins.zip';
+                    document.body.appendChild(a);
+                    a.click();
+                    
+                    // Clean up
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                    
+                    // Close the dropdown
+                    settingsDropdown?.classList.remove('active');
+                } catch (error) {
+                    console.error('Error downloading pins:', error);
+                    alert('Failed to download pins. Please try again.');
+                }
+            });
+        }
+
         // Show all tooltips after map is loaded
         this.mapManager.getMap().on('load', () => {
             const markers = this.mapManager.getMarkers();

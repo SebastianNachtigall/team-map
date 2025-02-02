@@ -11,6 +11,8 @@ from threading import Lock
 import requests
 from datetime import datetime
 from dotenv import load_dotenv
+import zipfile
+from io import BytesIO
 
 app = Flask(__name__, static_folder='dist', static_url_path='')
 
@@ -916,6 +918,34 @@ def add_cors_headers(response):
     response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
     response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
     return response
+
+@app.route('/download-pins', methods=['GET'])
+def download_pins():
+    try:
+        # Create a BytesIO object to store the ZIP file
+        zip_buffer = BytesIO()
+        
+        # Create a ZIP file
+        with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+            # Add all pin files to the ZIP
+            for filename in os.listdir(PINS_DIR):
+                if filename.endswith('.json'):
+                    file_path = os.path.join(PINS_DIR, filename)
+                    zip_file.write(file_path, filename)
+        
+        # Seek to the beginning of the BytesIO buffer
+        zip_buffer.seek(0)
+        
+        # Create the response
+        response = make_response(zip_buffer.getvalue())
+        response.headers['Content-Type'] = 'application/zip'
+        response.headers['Content-Disposition'] = 'attachment; filename=pins.zip'
+        
+        return response
+        
+    except Exception as e:
+        logger.error(f"Error creating ZIP file: {str(e)}")
+        return jsonify({'status': 'error', 'message': str(e)}), 500
 
 @app.route('/options', methods=['OPTIONS'])
 def handle_options():

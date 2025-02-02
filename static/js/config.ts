@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+
 // API configuration
 const isDevelopment = import.meta.env.DEV;
 const API_BASE_URL = isDevelopment 
@@ -9,5 +11,6 @@ export const config = {
         pins: `${API_BASE_URL}/pins`,
         connections: `${API_BASE_URL}/connections`,
         randomGif: `${API_BASE_URL}/api/random-gif`,
+        downloadPins: `${API_BASE_URL}/download-pins`,
     }
 };
