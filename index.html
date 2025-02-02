@@ -46,9 +46,14 @@
 
         <div class="content-container">
             <div class="map-container">
-                <div id="map"></div>
-                <div class="map-controls">
-                    <button id="downloadBtn" class="btn btn-icon" title="Download Light Map (requires internet)">💾</button>
+                <div id="map">
+                    <div class="settings-menu">
+                        <button id="settingsBtn" class="btn btn-icon" title="Settings">⚙️</button>
+                        <div id="settingsDropdown" class="settings-dropdown">
+                            <a href="#" id="downloadPinsBtn">Download All Pins</a>
+                            <a href="#" id="downloadBtn">Download Light Map</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
