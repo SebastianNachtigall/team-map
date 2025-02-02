@@ -1,4 +1,4 @@
-import { config } from '../config';
+import { config, loggingConfig } from '../config';
 import { ApiResponse } from '../types';
 
 type PollingCallback<T> = (data: T) => void;
@@ -40,7 +40,9 @@ export class PollingManager {
         // Clear any existing interval for this endpoint
         this.stopPolling(endpoint);
 
-        console.log(`Starting polling for ${endpoint} every ${interval}ms`);
+        if (loggingConfig.enabled && loggingConfig.polling.logConnectionEvents) {
+            console.log(`Starting polling for ${endpoint} every ${interval}ms`);
+        }
 
         const poll = async () => {
             try {
@@ -48,12 +50,16 @@ export class PollingManager {
                 
                 // Only trigger callback if data has changed
                 if (this.hasDataChanged(endpoint, data)) {
-                    console.log(`Data changed for ${endpoint}`, data);
+                    if (loggingConfig.enabled && loggingConfig.polling.logDataChanges) {
+                        console.log(`Data changed for ${endpoint}`, data);
+                    }
                     this.lastData.set(endpoint, data);
                     callback(data);
                 }
             } catch (error) {
-                console.error(`Polling error for ${endpoint}:`, error);
+                if (loggingConfig.enabled || loggingConfig.level === 'error') {
+                    console.error(`Polling error for ${endpoint}:`, error);
+                }
                 if (onError && error instanceof Error) {
                     onError(error);
                 }
@@ -71,7 +77,9 @@ export class PollingManager {
     public stopPolling(endpoint: string): void {
         const intervalId = this.intervals.get(endpoint);
         if (intervalId) {
-            console.log(`Stopping polling for ${endpoint}`);
+            if (loggingConfig.enabled && loggingConfig.polling.logConnectionEvents) {
+                console.log(`Stopping polling for ${endpoint}`);
+            }
             clearInterval(intervalId);
             this.intervals.delete(endpoint);
             this.lastData.delete(endpoint);
@@ -79,7 +87,9 @@ export class PollingManager {
     }
 
     public stopAllPolling(): void {
-        console.log('Stopping all polling');
+        if (loggingConfig.enabled && loggingConfig.polling.logConnectionEvents) {
+            console.log('Stopping all polling');
+        }
         this.intervals.forEach((intervalId, endpoint) => {
             this.stopPolling(endpoint);
         });

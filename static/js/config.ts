@@ -6,6 +6,16 @@ const API_BASE_URL = isDevelopment
     ? 'http://localhost:5002'  // Development
     : window.location.origin;   // Production
 
+// Logging configuration
+export const loggingConfig = {
+    enabled: isDevelopment,
+    level: isDevelopment ? 'debug' : 'error',
+    polling: {
+        logDataChanges: isDevelopment,
+        logConnectionEvents: isDevelopment
+    }
+};
+
 export const config = {
     api: {
         pins: `${API_BASE_URL}/pins`,

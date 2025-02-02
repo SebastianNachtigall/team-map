@@ -19,9 +19,20 @@ app = Flask(__name__, static_folder='dist', static_url_path='')
 # Load environment variables
 load_dotenv()
 
-# Configure logging
-logging.basicConfig(level=logging.DEBUG)
+# Configure logging based on environment
+is_production = os.getenv('FLASK_ENV') == 'production'
+logging.basicConfig(
+    level=logging.INFO if is_production else logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger(__name__)
+
+# Reduce logging noise in production
+if is_production:
+    # Reduce werkzeug logging
+    logging.getLogger('werkzeug').setLevel(logging.WARNING)
+    # Reduce polling endpoint logging
+    logging.getLogger('polling').setLevel(logging.WARNING)
 
 # Get Giphy API key from environment
 GIPHY_API_KEY = os.getenv('GIPHY_API_KEY')
