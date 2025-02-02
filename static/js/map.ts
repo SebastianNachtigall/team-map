@@ -20,7 +20,9 @@ export class MapManager {
         this.containerId = elementId;
         const mapConfig = { ...this.defaultConfig, ...config };
         
-        this.map = L.map(elementId).setView(
+        this.map = L.map(elementId, {
+            zoomControl: false  // Disable default zoom control
+        }).setView(
             mapConfig.center,
             mapConfig.zoom
         );
@@ -180,7 +182,7 @@ export class MapManager {
         return marker;
     }
 
-    public removeMarker(marker: L.Marker) {
+    public removeMarker(marker: L.Marker & { associatedLabel?: L.Marker }) {
         const index = this.markers.indexOf(marker);
         if (index > -1) {
             this.markers.splice(index, 1);
@@ -195,7 +197,7 @@ export class MapManager {
         const labelIcon = L.divIcon({
             className: 'marker-label',
             html: `<div class="label-content">${sanitizeText(text)}</div>`,
-            iconSize: null
+            iconSize: [0, 0]  // Use [0, 0] instead of null
         });
 
         const labelLatLng = L.latLng(
