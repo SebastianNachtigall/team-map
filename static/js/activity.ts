@@ -174,7 +174,53 @@ export class ActivityFeed {
         }
         
         activityItem.appendChild(activityContent);
+
+        // Add click event for map navigation (excluding deletion activities)
+        if (activity.type !== 'pin_deleted' && activity.type !== 'connection_deleted') {
+            activityItem.classList.add('navigable');
+            activityItem.addEventListener('click', () => this.navigateToActivity(activity));
+        }
+
         return activityItem;
+    }
+
+    private navigateToActivity(activity: Activity) {
+        if (!window.app?.mapManager) {
+            console.error('MapManager not available');
+            return;
+        }
+
+        const mapManager = window.app.mapManager;
+
+        switch (activity.type) {
+            case 'pin_created':
+                if (activity.data?.pin?.lat && activity.data.pin.lng) {
+                    mapManager.panTo(
+                        activity.data.pin.lat,
+                        activity.data.pin.lng,
+                        10 // Zoom level for pins
+                    );
+                }
+                break;
+            case 'connection_created':
+                if (activity.data?.connection) {
+                    const sourcePin = window.app.pinManager?.findPinById(activity.data.connection.sourceId);
+                    const targetPin = window.app.pinManager?.findPinById(activity.data.connection.targetId);
+                    
+                    if (sourcePin && targetPin) {
+                        // Calculate center point between the two pins
+                        const centerLat = (sourcePin.lat + targetPin.lat) / 2;
+                        const centerLng = (sourcePin.lng + targetPin.lng) / 2;
+                        
+                        mapManager.panTo(
+                            centerLat,
+                            centerLng,
+                            8 // Zoom level for connections
+                        );
+                    }
+                }
+                break;
+        }
     }
 
     private addActivityToDOM(activity: Activity) {
