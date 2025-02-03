@@ -119,6 +119,7 @@ export class App {
                     if (!currentPinIds.has(pin.id)) {
                         // New pin
                         const marker = this.pinManager.addPinToMap(pin);
+                        this.activityFeed.addActivity('pin_created', { pin });
                         if (marker) {
                             const popupContent = this.pinManager.createPopupContent(pin, marker);
                             marker.bindPopup(popupContent);
