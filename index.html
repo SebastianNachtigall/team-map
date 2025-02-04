@@ -34,12 +34,12 @@
             <div class="input-group">
                 <label for="imageUrl"></label>
                 <div class="input-with-button">
-                    <input type="text" id="imageUrl" placeholder="Image URL (optional)">
+                    <button id="pickGifBtn" class="btn" onclick="window.open('https://giphy.com/', '_blank')">Pick a GIF</button>
+                    <input type="text" id="imageUrl" placeholder="Paste GIF URL here">
                     <button id="luckyGifBtn" class="btn btn-icon" title="Feeling lucky? Get a random GIF!">🍀</button>
                 </div>
-                <small class="helper-text">(<a href="https://giphy.com/" target="_blank">Giphy</a>)</small>
             </div>
-            <button id="addPinBtn" class="btn">Add Pin</button>
+            <button id="addPinBtn" class="btn" disabled>Add Pin</button>
             <small id="instructions" class="helper-text">Click "Add Pin" to place marker</small>
         </div>
 

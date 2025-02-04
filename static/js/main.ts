@@ -217,6 +217,15 @@ export class App {
 
         console.log('Setting up event listeners...');
 
+        // Name input field listener
+        const nameInput = document.getElementById('name') as HTMLInputElement;
+        const addPinBtn = document.getElementById('addPinBtn') as HTMLButtonElement;
+        if (nameInput && addPinBtn) {
+            nameInput.addEventListener('input', () => {
+                addPinBtn.disabled = nameInput.value.trim() === '';
+            });
+        }
+
         // Download button
         const downloadBtn = document.getElementById('downloadBtn');
         if (downloadBtn) {
