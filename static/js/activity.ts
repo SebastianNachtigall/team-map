@@ -5,9 +5,13 @@ export class ActivityFeed {
     private activities: Activity[] = [];
     private maxActivities: number = 50;
     private feedElement: HTMLElement;
+    private pinSound: HTMLAudioElement;
 
     constructor(feedElementId: string) {
         console.log('Initializing ActivityFeed with element ID:', feedElementId);
+        // Initialize pin drop sound
+        this.pinSound = new Audio('./static/assets/pop-sound.mp3');
+        console.log('Pin drop sound initialized');
         const element = document.getElementById(feedElementId);
         if (!element) {
             console.error(`Activity feed element with id ${feedElementId} not found`);
@@ -48,6 +52,13 @@ export class ActivityFeed {
             case 'pin_created':
                 if (data?.pin) {
                     activityText = `${sanitizeText(data.pin.name)} dropped a pin${data.pin.location ? ` near ${sanitizeText(data.pin.location)}` : ''}`;
+                    // Play sound for new pin (only for non-existing pins)
+                    if (!isExisting) {
+                        console.log('Playing pin drop sound...');
+                        this.pinSound.play()
+                            .then(() => console.log('Pin drop sound played successfully'))
+                            .catch(error => console.error('Error playing pin drop sound:', error));
+                    }
                 }
                 break;
             case 'pin_deleted':

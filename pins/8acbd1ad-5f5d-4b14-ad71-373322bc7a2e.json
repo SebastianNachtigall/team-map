@@ -6,5 +6,12 @@
   "timestamp": "2025-02-02T21:45:25.223095",
   "location": "Berlin",
   "id": "8acbd1ad-5f5d-4b14-ad71-373322bc7a2e",
-  "connections": []
+  "connections": [
+    {
+      "id": "53f5f3d8-6fa3-4c00-83e7-78f94e76ae8b",
+      "sourceId": "8acbd1ad-5f5d-4b14-ad71-373322bc7a2e",
+      "targetId": "c9009099-19ee-4cc0-8a4a-2100fae2ea69",
+      "timestamp": "2025-02-04T13:59:41.713856"
+    }
+  ]
 }

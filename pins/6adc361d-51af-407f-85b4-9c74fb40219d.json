@@ -1,0 +1,17 @@
+{
+  "lat": 46.98025235521883,
+  "lng": 1.8017578125000002,
+  "name": "Looking good",
+  "imageUrl": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDh2M3luYmxpdmFrZ3kwcHg1aW13ampydHA2dmltZG43NjFmdTN6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3uBMPwDSVpR1C/giphy.gif",
+  "timestamp": "2025-02-04T13:54:24.223670",
+  "location": "Saint-Valentin",
+  "id": "6adc361d-51af-407f-85b4-9c74fb40219d",
+  "connections": [
+    {
+      "id": "646d3db5-9d24-47c3-b480-d8628ccc10f0",
+      "sourceId": "6adc361d-51af-407f-85b4-9c74fb40219d",
+      "targetId": "55be956d-0399-45ab-8633-524bd713401f",
+      "timestamp": "2025-02-04T13:54:44.063422"
+    }
+  ]
+}

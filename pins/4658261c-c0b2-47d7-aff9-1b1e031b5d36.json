@@ -1,0 +1,17 @@
+{
+  "lat": 40.76125212245011,
+  "lng": -73.98502349853517,
+  "name": "King Kong",
+  "imageUrl": "https://media.giphy.com/media/Q4Ua4VH1KE1POFjZWL/giphy.gif?cid=790b7611gcuoinl4knz2hrw5ew9i44ai05fut0mie3sjmr1e&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+  "timestamp": "2025-02-04T14:19:25.121826",
+  "location": "City of New York",
+  "id": "4658261c-c0b2-47d7-aff9-1b1e031b5d36",
+  "connections": [
+    {
+      "id": "0f0c4ad5-909f-4e05-85ef-31e6611a42d2",
+      "sourceId": "4658261c-c0b2-47d7-aff9-1b1e031b5d36",
+      "targetId": "df70d598-6ded-44c7-b7ef-61592af24814",
+      "timestamp": "2025-02-04T14:19:48.775761"
+    }
+  ]
+}

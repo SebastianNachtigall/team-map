@@ -1,0 +1,23 @@
+{
+  "lat": 51.66611096282655,
+  "lng": -0.37353515625000006,
+  "name": "Ambika",
+  "imageUrl": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExenRzdWtnN29vdzl5cmU4M3EzejZudjk4Z2I4NzRnMHBqNW9wOWxtYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BYoRqTmcgzHcL9TCy1/giphy.gif",
+  "timestamp": "2025-02-04T13:54:21.418744",
+  "location": "Hertsmere",
+  "id": "c9009099-19ee-4cc0-8a4a-2100fae2ea69",
+  "connections": [
+    {
+      "id": "56a7f70f-99ab-4866-94b2-74af45e7fbdb",
+      "sourceId": "b0414df7-0b49-448e-a53b-d2ee0806e0fe",
+      "targetId": "c9009099-19ee-4cc0-8a4a-2100fae2ea69",
+      "timestamp": "2025-02-04T13:54:30.362959"
+    },
+    {
+      "id": "53f5f3d8-6fa3-4c00-83e7-78f94e76ae8b",
+      "sourceId": "8acbd1ad-5f5d-4b14-ad71-373322bc7a2e",
+      "targetId": "c9009099-19ee-4cc0-8a4a-2100fae2ea69",
+      "timestamp": "2025-02-04T13:59:41.713856"
+    }
+  ]
+}

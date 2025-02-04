@@ -1,0 +1,17 @@
+{
+  "lat": 52.52804635930533,
+  "lng": 13.640894293785097,
+  "name": "Konrad",
+  "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzQweGF0YmdmZHM5bnVkNjhhbzZldjc5YmJuNjdmMTJzOG1lZGN0ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPwoeGErMmaI43S/giphy.gif",
+  "timestamp": "2025-02-04T13:54:00.827734",
+  "location": "Berlin",
+  "id": "dc7d7b27-c8f0-4651-97ad-7cdd6c5427a2",
+  "connections": [
+    {
+      "id": "f0b0bb64-d3af-48b1-b308-c3261eda8312",
+      "sourceId": "dc7d7b27-c8f0-4651-97ad-7cdd6c5427a2",
+      "targetId": "55be956d-0399-45ab-8633-524bd713401f",
+      "timestamp": "2025-02-04T13:54:52.564913"
+    }
+  ]
+}

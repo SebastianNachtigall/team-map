@@ -1,0 +1,17 @@
+{
+  "lat": 38.89753772194202,
+  "lng": -77.03655660152435,
+  "name": "Crazy Donald",
+  "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWQ3OHF0dnI1OWdvNzVsYjhnazhtc294ZW9pcnhidWhzbHMwZ2VlaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rClm6vkOlS7NC/giphy.gif",
+  "timestamp": "2025-02-04T13:56:52.496474",
+  "location": "Washington",
+  "id": "74cd3e75-3b4f-4291-b0aa-e1271d155f78",
+  "connections": [
+    {
+      "id": "94817062-737a-46a9-a142-ce708ad4f075",
+      "sourceId": "74cd3e75-3b4f-4291-b0aa-e1271d155f78",
+      "targetId": "fe859e53-2555-47be-892c-dfa2bc012501",
+      "timestamp": "2025-02-04T14:11:21.528664"
+    }
+  ]
+}

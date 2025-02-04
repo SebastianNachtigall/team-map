@@ -1,0 +1,17 @@
+{
+  "lat": 55.75135729525429,
+  "lng": 37.61558890342713,
+  "name": "Vladimir P.",
+  "imageUrl": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmtrM2xocmx6eW8ycDBmMGRhY240b2NocGpidDRueHFhbzJ5YjNwbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BMnhty6LSuBnFWO5mH/giphy.gif",
+  "timestamp": "2025-02-04T13:55:39.309993",
+  "location": "\u041c\u043e\u0441\u043a\u0432\u0430",
+  "id": "3146b547-c447-4b82-bedf-664191f6f82c",
+  "connections": [
+    {
+      "id": "5419b663-304a-4fc4-83f6-a190b30bf1d5",
+      "sourceId": "3146b547-c447-4b82-bedf-664191f6f82c",
+      "targetId": "a5437cff-2f63-4cdc-93ad-fcab24a08e05",
+      "timestamp": "2025-02-04T14:00:14.291729"
+    }
+  ]
+}
