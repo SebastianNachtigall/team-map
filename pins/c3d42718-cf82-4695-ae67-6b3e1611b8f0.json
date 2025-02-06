@@ -1,0 +1,41 @@
+{
+  "lat": 48.831500897044045,
+  "lng": 9.165859222412111,
+  "name": "Eva Zimmermann",
+  "imageUrl": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnc2Zm9ucXhjYzRhNHoyd3VsOWN3ZmRvMjFpNnc4dzRyaXRidjBlZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4JVTF9zR9BicshFAb7/giphy.gif",
+  "timestamp": "2025-02-06T12:53:39.379197",
+  "location": "Stuttgart",
+  "id": "c3d42718-cf82-4695-ae67-6b3e1611b8f0",
+  "connections": [
+    {
+      "id": "671e3ba6-af94-4d2e-97d9-619915c28467",
+      "sourceId": "382f3c9b-6ca5-4cc1-8117-c6a51b9aa9ad",
+      "targetId": "c3d42718-cf82-4695-ae67-6b3e1611b8f0",
+      "timestamp": "2025-02-06T12:59:10.992737"
+    },
+    {
+      "id": "feff71ac-9fcc-40ec-bd37-1d36987356ef",
+      "sourceId": "c3d42718-cf82-4695-ae67-6b3e1611b8f0",
+      "targetId": "382f3c9b-6ca5-4cc1-8117-c6a51b9aa9ad",
+      "timestamp": "2025-02-06T13:00:39.175101"
+    },
+    {
+      "id": "efc2f7c2-7ca2-44c4-a32c-361995350392",
+      "sourceId": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+      "targetId": "c3d42718-cf82-4695-ae67-6b3e1611b8f0",
+      "timestamp": "2025-02-06T13:01:15.000150"
+    },
+    {
+      "id": "01180c3b-3d1c-44a3-9ffa-889a809b0dcf",
+      "sourceId": "c3d42718-cf82-4695-ae67-6b3e1611b8f0",
+      "targetId": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+      "timestamp": "2025-02-06T13:01:31.247667"
+    },
+    {
+      "id": "f8a91cb9-1b48-47ef-a439-103b61f30e47",
+      "sourceId": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+      "targetId": "c3d42718-cf82-4695-ae67-6b3e1611b8f0",
+      "timestamp": "2025-02-06T13:01:51.563840"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "lat": 52.513379400361856,
+  "lng": 13.617553710937502,
+  "name": "Belinda Koch",
+  "imageUrl": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTMxd2RkMGluOG0zYm93YWJpcTZzOTE5OGxrcWtoOTV3MXI2dGh4YyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l2JdWDiqHJ0iKMRiM/giphy.gif",
+  "timestamp": "2025-02-06T12:53:24.996304",
+  "location": "Berlin",
+  "id": "f386ad1d-7513-46b2-9b40-1809fe59eeb6",
+  "connections": [
+    {
+      "id": "7b6addc9-7302-48fb-9e02-c9350ef20030",
+      "sourceId": "f386ad1d-7513-46b2-9b40-1809fe59eeb6",
+      "targetId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "timestamp": "2025-02-06T12:55:57.226426"
+    },
+    {
+      "id": "238a15ec-368d-40b2-82cd-10d6b2a36e9e",
+      "sourceId": "f386ad1d-7513-46b2-9b40-1809fe59eeb6",
+      "targetId": "373b99b3-c2e9-479c-be88-98ec0ea9e8f8",
+      "timestamp": "2025-02-06T12:56:44.065582"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "lat": 52.32904511724995,
+  "lng": 10.199775695800783,
+  "name": "Lea Doliwa",
+  "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHE4emJ3cnlsMm5pMTlxbnZsZHpwN3cyaWtlazk3YjU4ZzNmaDNjYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MuOGhW5GtDazUSJcL3/giphy.gif",
+  "timestamp": "2025-02-06T12:53:16.492299",
+  "location": "Peine",
+  "id": "616f4eeb-b1aa-4a94-90be-96df7e4e2592",
+  "connections": [
+    {
+      "id": "11c7164d-9a18-4739-a306-90caf5cbdf6f",
+      "sourceId": "a896fd29-289a-43ef-a4b8-8a099c8c4f3d",
+      "targetId": "616f4eeb-b1aa-4a94-90be-96df7e4e2592",
+      "timestamp": "2025-02-06T12:55:13.979716"
+    }
+  ]
+}

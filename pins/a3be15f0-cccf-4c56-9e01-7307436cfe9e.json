@@ -1,0 +1,29 @@
+{
+  "lat": 52.5582468108558,
+  "lng": 13.572535514831543,
+  "name": "Thomas Wader",
+  "imageUrl": "",
+  "timestamp": "2025-02-06T12:53:08.249476",
+  "location": "Berlin",
+  "id": "a3be15f0-cccf-4c56-9e01-7307436cfe9e",
+  "connections": [
+    {
+      "id": "eb0b4ec9-a74c-40cb-977a-878bf22ab2f0",
+      "sourceId": "53577958-2a35-4a48-b422-65d465fd9253",
+      "targetId": "a3be15f0-cccf-4c56-9e01-7307436cfe9e",
+      "timestamp": "2025-02-06T12:55:39.067398"
+    },
+    {
+      "id": "62b21c34-fa65-480d-b806-9a64c8d89697",
+      "sourceId": "a3be15f0-cccf-4c56-9e01-7307436cfe9e",
+      "targetId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "timestamp": "2025-02-06T12:55:57.419358"
+    },
+    {
+      "id": "6e7c2f32-4562-4411-bcf8-3ab6cb049012",
+      "sourceId": "a3be15f0-cccf-4c56-9e01-7307436cfe9e",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:56:25.801600"
+    }
+  ]
+}

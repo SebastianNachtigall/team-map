@@ -1,0 +1,17 @@
+{
+  "lat": 77.91566898632584,
+  "lng": -39.72656250000001,
+  "name": "Maik Elbracht",
+  "imageUrl": "",
+  "timestamp": "2025-02-06T12:55:27.750532",
+  "location": "Kalaallit Nunaat",
+  "id": "097803a1-d665-4cfb-b3b8-3a712a47e35e",
+  "connections": [
+    {
+      "id": "89270f00-8a95-4de7-8147-741c941d6b89",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "097803a1-d665-4cfb-b3b8-3a712a47e35e",
+      "timestamp": "2025-02-06T13:00:04.809365"
+    }
+  ]
+}

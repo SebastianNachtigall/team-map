@@ -1,0 +1,41 @@
+{
+  "lat": 52.40493238518258,
+  "lng": 9.78362560272217,
+  "name": "Greta Licht",
+  "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTU1OWM5ZTFhOTNodmozZjB5d2E2a3J6aDgxemdieWZocWI5dGVjdW44a3lmd25kMyZlcD12MV9naWZzX3JhbmRvbSZjdD1n/GmsAwuDab0ldNibg7F/giphy.gif",
+  "timestamp": "2025-02-06T12:53:47.908258",
+  "location": "Hannover",
+  "id": "6f03a0bf-23e7-4b6c-9b8b-db3798345bf5",
+  "connections": [
+    {
+      "id": "661422e5-0aa4-48f9-b0bf-a333bde8fb06",
+      "sourceId": "6f03a0bf-23e7-4b6c-9b8b-db3798345bf5",
+      "targetId": "ef5e1d73-a9f1-4995-befe-628fe2a143e2",
+      "timestamp": "2025-02-06T12:54:31.830266"
+    },
+    {
+      "id": "e6512a5c-459a-4789-9e6c-abc85b30d14a",
+      "sourceId": "a896fd29-289a-43ef-a4b8-8a099c8c4f3d",
+      "targetId": "6f03a0bf-23e7-4b6c-9b8b-db3798345bf5",
+      "timestamp": "2025-02-06T12:54:50.694836"
+    },
+    {
+      "id": "087ea9d4-a9b9-449e-8f78-85e89ffa61c4",
+      "sourceId": "6f03a0bf-23e7-4b6c-9b8b-db3798345bf5",
+      "targetId": "3a4a0ac1-d8d6-41f8-a0fb-3cde74804961",
+      "timestamp": "2025-02-06T12:56:30.578933"
+    },
+    {
+      "id": "39f417d9-a4c8-4162-97d1-c4e34f91a834",
+      "sourceId": "6f03a0bf-23e7-4b6c-9b8b-db3798345bf5",
+      "targetId": "514878d0-f27a-476b-933b-1aa7679aa6d2",
+      "timestamp": "2025-02-06T12:57:09.450270"
+    },
+    {
+      "id": "2a725315-506d-4322-a1bc-54e4eaf29241",
+      "sourceId": "514878d0-f27a-476b-933b-1aa7679aa6d2",
+      "targetId": "6f03a0bf-23e7-4b6c-9b8b-db3798345bf5",
+      "timestamp": "2025-02-06T12:58:21.925534"
+    }
+  ]
+}

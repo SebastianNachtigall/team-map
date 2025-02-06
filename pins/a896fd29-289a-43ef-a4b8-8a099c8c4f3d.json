@@ -1,0 +1,35 @@
+{
+  "lat": 52.24377883252849,
+  "lng": 9.661445617675783,
+  "name": "Nils",
+  "imageUrl": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYW9jd29hY3JyN3d2eWM1OXdsY2RveDM1enFkazZpdDF4MjJucmozdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/slVWEctHZKvWU/giphy.gif",
+  "timestamp": "2025-02-06T12:53:13.964150",
+  "location": "Springe",
+  "id": "a896fd29-289a-43ef-a4b8-8a099c8c4f3d",
+  "connections": [
+    {
+      "id": "6de10e40-d4a0-48f4-8495-f0e2ab419af9",
+      "sourceId": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+      "targetId": "a896fd29-289a-43ef-a4b8-8a099c8c4f3d",
+      "timestamp": "2025-02-06T12:54:24.217834"
+    },
+    {
+      "id": "e6512a5c-459a-4789-9e6c-abc85b30d14a",
+      "sourceId": "a896fd29-289a-43ef-a4b8-8a099c8c4f3d",
+      "targetId": "6f03a0bf-23e7-4b6c-9b8b-db3798345bf5",
+      "timestamp": "2025-02-06T12:54:50.694836"
+    },
+    {
+      "id": "11c7164d-9a18-4739-a306-90caf5cbdf6f",
+      "sourceId": "a896fd29-289a-43ef-a4b8-8a099c8c4f3d",
+      "targetId": "616f4eeb-b1aa-4a94-90be-96df7e4e2592",
+      "timestamp": "2025-02-06T12:55:13.979716"
+    },
+    {
+      "id": "cc20771f-83fb-4bff-8ad3-10bee74e3988",
+      "sourceId": "a896fd29-289a-43ef-a4b8-8a099c8c4f3d",
+      "targetId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "timestamp": "2025-02-06T12:55:52.923496"
+    }
+  ]
+}

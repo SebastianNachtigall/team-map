@@ -1,0 +1,29 @@
+{
+  "lat": 51.669159546016104,
+  "lng": -0.39413452148437506,
+  "name": "Ambika Purushothaman",
+  "imageUrl": "https://media0.giphy.com/media/v1.Y2lkPTU1OWM5ZTFhcGwxZGowdGcwYnl3Y2EycGJiMXh4dXlqejMzNmlteXZpMWZnN3R5ZyZlcD12MV9naWZzX3JhbmRvbSZjdD1n/1d89O7BUbINhpMzSsI/giphy.gif",
+  "timestamp": "2025-02-06T12:53:56.172941",
+  "location": "Watford",
+  "id": "08a9fda3-144b-498a-8d18-5f5421a0c636",
+  "connections": [
+    {
+      "id": "55eea9db-686b-4a6a-8683-08bceef0d7e4",
+      "sourceId": "08a9fda3-144b-498a-8d18-5f5421a0c636",
+      "targetId": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+      "timestamp": "2025-02-06T12:54:36.972023"
+    },
+    {
+      "id": "fa28f037-4887-4c2a-a5d8-d59331bbecc9",
+      "sourceId": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+      "targetId": "08a9fda3-144b-498a-8d18-5f5421a0c636",
+      "timestamp": "2025-02-06T12:54:50.931406"
+    },
+    {
+      "id": "32e36fc4-1dca-4518-aa15-918029a42a1e",
+      "sourceId": "08a9fda3-144b-498a-8d18-5f5421a0c636",
+      "targetId": "f83cb34c-039f-44e9-83dc-bf555e81617d",
+      "timestamp": "2025-02-06T12:55:05.205729"
+    }
+  ]
+}

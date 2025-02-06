@@ -1,0 +1,53 @@
+{
+  "lat": 52.482780222078226,
+  "lng": 14.150390625000002,
+  "name": "Karin",
+  "imageUrl": "https://giphy.com/gifs/cat-kisses-hugs-MDJ9IbxxvDUQM",
+  "timestamp": "2025-02-06T12:52:45.639447",
+  "location": "M\u00fcncheberg",
+  "id": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+  "connections": [
+    {
+      "id": "92d3c031-a5b3-4a88-b321-d56ffcf4b996",
+      "sourceId": "810922e4-0d47-402f-b0e0-8549f7365948",
+      "targetId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "timestamp": "2025-02-06T12:54:51.701099"
+    },
+    {
+      "id": "cc20771f-83fb-4bff-8ad3-10bee74e3988",
+      "sourceId": "a896fd29-289a-43ef-a4b8-8a099c8c4f3d",
+      "targetId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "timestamp": "2025-02-06T12:55:52.923496"
+    },
+    {
+      "id": "d80bb407-1dab-4ba3-b5fd-1dad82b6d266",
+      "sourceId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "targetId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "timestamp": "2025-02-06T12:56:30.702829"
+    },
+    {
+      "id": "7aa4a10c-90bb-4265-80ff-c0422323d9de",
+      "sourceId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "targetId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "timestamp": "2025-02-06T12:56:54.652452"
+    },
+    {
+      "id": "9df0b2e2-e7de-403b-946a-4e6066d4fbfe",
+      "sourceId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "targetId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "timestamp": "2025-02-06T12:57:05.607190"
+    },
+    {
+      "id": "c568e9e0-af51-497a-9e24-17e8d6b29c56",
+      "sourceId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "targetId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "timestamp": "2025-02-06T12:57:05.611432"
+    },
+    {
+      "id": "74a12a34-dfa8-4076-838a-83964c133aa7",
+      "sourceId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "targetId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "timestamp": "2025-02-06T12:57:13.208899"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "lat": 52.51120638909939,
+  "lng": 13.308563232421877,
+  "name": "Henry Reger",
+  "imageUrl": "https://media.giphy.com/media/dr7KAthziEq1q/giphy.gif?cid=790b7611kbmzwn91t2e5ur94rpjpwwas8j0nc5ygua370psu&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+  "timestamp": "2025-02-06T12:53:03.846484",
+  "location": "Berlin",
+  "id": "0f4760d5-9ec1-495d-84fd-4f1c2653842d",
+  "connections": [
+    {
+      "id": "ba03f9f4-62df-48df-9d5b-dc12890ad202",
+      "sourceId": "0f4760d5-9ec1-495d-84fd-4f1c2653842d",
+      "targetId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "timestamp": "2025-02-06T12:55:45.172926"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "lat": 52.43784222504682,
+  "lng": 13.340835571289064,
+  "name": "Britt Weidlich",
+  "imageUrl": "https://giphy.com/gifs/AusOlympicTeam-scotty-james-snow-swimming-swimmings-MpJJ7gWng24bjxrMiK",
+  "timestamp": "2025-02-06T12:54:17.686238",
+  "location": "Berlin",
+  "id": "ca901707-b2fe-4a38-ac5a-87f10b41637a",
+  "connections": [
+    {
+      "id": "223cf79e-a232-4f3c-af22-f6ff188f5fd7",
+      "sourceId": "332c0e4a-ea3c-4f47-9e47-f80382ef1488",
+      "targetId": "ca901707-b2fe-4a38-ac5a-87f10b41637a",
+      "timestamp": "2025-02-06T12:55:22.278086"
+    }
+  ]
+}

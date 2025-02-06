@@ -1,0 +1,23 @@
+{
+  "lat": 53.08082737207479,
+  "lng": 8.822021484375002,
+  "name": "Artur Hallmann",
+  "imageUrl": "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDZ3eWdjdjJqZjIwODNpNzhmd29tcGtsN3l1bGVscmRhcjdhbGtqYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohhwLfshWmRhgfAEo/giphy.gif",
+  "timestamp": "2025-02-06T12:53:26.241885",
+  "location": "Stadtgebiet Bremen",
+  "id": "63eb63f2-ece8-4b71-83bf-0e457ac54725",
+  "connections": [
+    {
+      "id": "06c3266c-20c3-48f8-837a-049da473b88a",
+      "sourceId": "63eb63f2-ece8-4b71-83bf-0e457ac54725",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:58:43.394845"
+    },
+    {
+      "id": "d2fc9f16-b524-4b62-9901-ff44e69ff569",
+      "sourceId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "targetId": "63eb63f2-ece8-4b71-83bf-0e457ac54725",
+      "timestamp": "2025-02-06T12:59:19.894735"
+    }
+  ]
+}

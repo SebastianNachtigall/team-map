@@ -1,0 +1,35 @@
+{
+  "lat": 52.51334805773167,
+  "lng": 13.395938873291017,
+  "name": "Valentin Schumm",
+  "imageUrl": "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExODU3c2Z3ODlkbWduYmZzaDZqM2Z2YXh0ZHpjcXptOHk2dXpkN3Y2eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zj34hYcUpdSZL3rzSS/giphy.gif",
+  "timestamp": "2025-02-06T12:53:02.592560",
+  "location": "Berlin",
+  "id": "3a4a0ac1-d8d6-41f8-a0fb-3cde74804961",
+  "connections": [
+    {
+      "id": "0f6694d5-15f4-49c1-b505-b0eeab566b7f",
+      "sourceId": "3a4a0ac1-d8d6-41f8-a0fb-3cde74804961",
+      "targetId": "ef5e1d73-a9f1-4995-befe-628fe2a143e2",
+      "timestamp": "2025-02-06T12:54:53.784222"
+    },
+    {
+      "id": "e536701c-99ed-47ce-8c4c-90146b4afa78",
+      "sourceId": "3a4a0ac1-d8d6-41f8-a0fb-3cde74804961",
+      "targetId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "timestamp": "2025-02-06T12:55:33.239704"
+    },
+    {
+      "id": "087ea9d4-a9b9-449e-8f78-85e89ffa61c4",
+      "sourceId": "6f03a0bf-23e7-4b6c-9b8b-db3798345bf5",
+      "targetId": "3a4a0ac1-d8d6-41f8-a0fb-3cde74804961",
+      "timestamp": "2025-02-06T12:56:30.578933"
+    },
+    {
+      "id": "9ab7e813-8951-48e8-be15-bd89e26f29b0",
+      "sourceId": "3a4a0ac1-d8d6-41f8-a0fb-3cde74804961",
+      "targetId": "2bb3be80-aae9-448b-8a8e-8bbb5a8518e3",
+      "timestamp": "2025-02-06T12:57:03.275791"
+    }
+  ]
+}

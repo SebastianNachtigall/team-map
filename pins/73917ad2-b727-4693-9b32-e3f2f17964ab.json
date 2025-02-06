@@ -1,0 +1,29 @@
+{
+  "lat": 50.44526214970796,
+  "lng": 30.531005859375004,
+  "name": "Oleh Hordiienko ",
+  "imageUrl": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGRpdGF3cXpiZmg2eG5pdG5tYzVwMjkydXRhNjgzZGZ4d3J0dzNxbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/duNowzaVje6Di3hnOu/giphy.gif",
+  "timestamp": "2025-02-06T12:55:49.335564",
+  "location": "\u041a\u0438\u0457\u0432",
+  "id": "73917ad2-b727-4693-9b32-e3f2f17964ab",
+  "connections": [
+    {
+      "id": "a6c930e8-f873-45e3-96c1-60f06346f086",
+      "sourceId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "targetId": "73917ad2-b727-4693-9b32-e3f2f17964ab",
+      "timestamp": "2025-02-06T12:56:25.671958"
+    },
+    {
+      "id": "e1a9aac1-a615-4166-a32e-da21e04931c1",
+      "sourceId": "73917ad2-b727-4693-9b32-e3f2f17964ab",
+      "targetId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "timestamp": "2025-02-06T12:56:28.828329"
+    },
+    {
+      "id": "f33b4fb5-aedc-482e-a51f-7576fbc178d1",
+      "sourceId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "targetId": "73917ad2-b727-4693-9b32-e3f2f17964ab",
+      "timestamp": "2025-02-06T12:56:48.215938"
+    }
+  ]
+}

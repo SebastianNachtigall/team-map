@@ -1,0 +1,23 @@
+{
+  "lat": 49.8426007279848,
+  "lng": 24.02572631835938,
+  "name": "Tetiana Lemann",
+  "imageUrl": "https://giphy.com/gifs/sleeping-pokemon-tired-khMwtd5muCbK0",
+  "timestamp": "2025-02-06T12:54:46.014017",
+  "location": "\u041b\u044c\u0432\u0456\u0432\u0441\u044c\u043a\u0430 \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
+  "id": "115780a0-0639-4c3c-9a73-317d5fb06826",
+  "connections": [
+    {
+      "id": "7eb2727f-734f-4bbd-9d18-1ec00b1db371",
+      "sourceId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "targetId": "115780a0-0639-4c3c-9a73-317d5fb06826",
+      "timestamp": "2025-02-06T12:57:00.287791"
+    },
+    {
+      "id": "f38fb913-d6ba-4e9b-bee5-aac37a20f3a2",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "115780a0-0639-4c3c-9a73-317d5fb06826",
+      "timestamp": "2025-02-06T12:58:58.592553"
+    }
+  ]
+}

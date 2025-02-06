@@ -1,0 +1,23 @@
+{
+  "lat": 47.25686404408872,
+  "lng": 11.370849609375002,
+  "name": "Christina Steiner-Hausberger",
+  "imageUrl": "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3ByMDU4Zm03dWozMHJsbG11djdseDlyODhqcDd2Z2I3ZW91NmRxMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MpJJ7gWng24bjxrMiK/giphy.gif",
+  "timestamp": "2025-02-06T12:52:35.375543",
+  "location": "Innsbruck",
+  "id": "e7c0ff3c-b10c-4a03-82f0-de7cdf6a7f1a",
+  "connections": [
+    {
+      "id": "c272c159-c1c3-4c40-8d54-b37e5eff7783",
+      "sourceId": "e7c0ff3c-b10c-4a03-82f0-de7cdf6a7f1a",
+      "targetId": "0596d982-02c4-4abc-8a4b-26e315481fbc",
+      "timestamp": "2025-02-06T12:53:06.949924"
+    },
+    {
+      "id": "19fb87cb-6df4-4f93-baaf-a2cd1296b857",
+      "sourceId": "e7c0ff3c-b10c-4a03-82f0-de7cdf6a7f1a",
+      "targetId": "25a5773f-6a4d-4e3b-9b89-a572f80c5d3a",
+      "timestamp": "2025-02-06T12:54:20.616051"
+    }
+  ]
+}

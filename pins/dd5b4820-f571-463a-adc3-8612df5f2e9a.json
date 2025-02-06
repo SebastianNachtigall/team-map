@@ -1,0 +1,23 @@
+{
+  "lat": 47.25033915108798,
+  "lng": 11.40106201171875,
+  "name": "Christoph Friedl",
+  "imageUrl": "https://media.giphy.com/media/UO5elnTqo4vSg/giphy.gif?cid=82a1493bleay0j0lkbwgkkb1t2ln2v4dfkzyooww5zizxtxm&ep=v1_gifs_trending&rid=giphy.gif&ct=g",
+  "timestamp": "2025-02-06T12:52:44.378224",
+  "location": "Innsbruck",
+  "id": "dd5b4820-f571-463a-adc3-8612df5f2e9a",
+  "connections": [
+    {
+      "id": "88aa441c-5dc8-4aab-bf90-225c42785dd7",
+      "sourceId": "dd5b4820-f571-463a-adc3-8612df5f2e9a",
+      "targetId": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+      "timestamp": "2025-02-06T12:54:14.020336"
+    },
+    {
+      "id": "70e7ef0d-f51b-4d82-83dd-0e467b8bf358",
+      "sourceId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "targetId": "dd5b4820-f571-463a-adc3-8612df5f2e9a",
+      "timestamp": "2025-02-06T13:00:27.495715"
+    }
+  ]
+}

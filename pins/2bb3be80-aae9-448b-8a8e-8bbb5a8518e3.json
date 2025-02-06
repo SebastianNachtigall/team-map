@@ -1,0 +1,29 @@
+{
+  "lat": 52.51856829227509,
+  "lng": 13.3469295501709,
+  "name": "Egor Povarnitsyn",
+  "imageUrl": "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExajBtOWYxdXp1ZWg5Z3J6endlcXdmcmVoeDkyN3ViN3FqNWlxYjc1OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nk2C49mUNljb1scZgY/giphy.gif",
+  "timestamp": "2025-02-06T12:53:45.374147",
+  "location": "Berlin",
+  "id": "2bb3be80-aae9-448b-8a8e-8bbb5a8518e3",
+  "connections": [
+    {
+      "id": "03ae2982-b0fe-4d88-9d70-27cbb4ee6172",
+      "sourceId": "2bb3be80-aae9-448b-8a8e-8bbb5a8518e3",
+      "targetId": "ef5e1d73-a9f1-4995-befe-628fe2a143e2",
+      "timestamp": "2025-02-06T12:55:25.384866"
+    },
+    {
+      "id": "9ab7e813-8951-48e8-be15-bd89e26f29b0",
+      "sourceId": "3a4a0ac1-d8d6-41f8-a0fb-3cde74804961",
+      "targetId": "2bb3be80-aae9-448b-8a8e-8bbb5a8518e3",
+      "timestamp": "2025-02-06T12:57:03.275791"
+    },
+    {
+      "id": "360ca9b7-00d8-40ed-955f-33b8968dbf77",
+      "sourceId": "2bb3be80-aae9-448b-8a8e-8bbb5a8518e3",
+      "targetId": "455f9661-a339-447d-a9cc-31301cbfa554",
+      "timestamp": "2025-02-06T12:57:33.478911"
+    }
+  ]
+}

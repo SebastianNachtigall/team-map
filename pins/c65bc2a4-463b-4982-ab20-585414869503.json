@@ -1,0 +1,77 @@
+{
+  "lat": 49.82148337033528,
+  "lng": 24.13576126098633,
+  "name": "Ruslan Tereshchenko",
+  "imageUrl": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExendlbXN1b3Q0c2xhZXdpcjV2cjk5cjI2Y3N4NDE5c2l3c3lhYXl5dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/p2Ow6zI8NbaCeBnpHV/giphy.gif",
+  "timestamp": "2025-02-06T12:53:21.170034",
+  "location": "\u041b\u044c\u0432\u0456\u0432\u0441\u044c\u043a\u0430 \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
+  "id": "c65bc2a4-463b-4982-ab20-585414869503",
+  "connections": [
+    {
+      "id": "7a90c538-558e-4a85-b514-b56e15722715",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "1b7c8fa0-d916-4134-b2c4-c65ee03d7c4d",
+      "timestamp": "2025-02-06T12:54:20.834168"
+    },
+    {
+      "id": "745c67c5-44bf-46dd-9c20-1256c77e7025",
+      "sourceId": "ba3c5360-b723-4b73-a4ff-9cbb55930318",
+      "targetId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "timestamp": "2025-02-06T12:55:04.502684"
+    },
+    {
+      "id": "049cfacc-e7f4-4069-ad4a-8c43e9044b7c",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "ba3c5360-b723-4b73-a4ff-9cbb55930318",
+      "timestamp": "2025-02-06T12:55:09.998597"
+    },
+    {
+      "id": "3d8094df-b7d0-4437-94fb-17f4e63f7fce",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "53577958-2a35-4a48-b422-65d465fd9253",
+      "timestamp": "2025-02-06T12:55:32.545593"
+    },
+    {
+      "id": "0a262ce8-8a5c-489b-80a3-f95e3c3342ba",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:55:34.012908"
+    },
+    {
+      "id": "da332482-47e7-4199-ad4f-5d292cdc067f",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "e79d5f6a-0777-4268-ad77-39a4a86129d8",
+      "timestamp": "2025-02-06T12:56:35.832815"
+    },
+    {
+      "id": "e7572935-edd2-4bb1-968d-9256519c3eb9",
+      "sourceId": "e79d5f6a-0777-4268-ad77-39a4a86129d8",
+      "targetId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "timestamp": "2025-02-06T12:56:48.056361"
+    },
+    {
+      "id": "37008e98-47fa-4b88-b296-1e6fe3d6f2c1",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "timestamp": "2025-02-06T12:57:04.763752"
+    },
+    {
+      "id": "f38fb913-d6ba-4e9b-bee5-aac37a20f3a2",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "115780a0-0639-4c3c-9a73-317d5fb06826",
+      "timestamp": "2025-02-06T12:58:58.592553"
+    },
+    {
+      "id": "89270f00-8a95-4de7-8147-741c941d6b89",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "097803a1-d665-4cfb-b3b8-3a712a47e35e",
+      "timestamp": "2025-02-06T13:00:04.809365"
+    },
+    {
+      "id": "549feb59-a9e1-4619-89e3-89e780c6cd1f",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "timestamp": "2025-02-06T13:01:34.540426"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "lat": 47.26462587182134,
+  "lng": 11.391406059265138,
+  "name": "Clemens Gasser",
+  "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTc3ZG8wbzRhemowZTlpc3E2NDh3aDYxMTY0aWsybnJoNTd0Z2JzZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SC0VDXns3gvS0/giphy.gif",
+  "timestamp": "2025-02-06T12:52:43.013737",
+  "location": "Innsbruck",
+  "id": "25a5773f-6a4d-4e3b-9b89-a572f80c5d3a",
+  "connections": [
+    {
+      "id": "6995ddaa-8323-4680-ba67-afbb012b6f52",
+      "sourceId": "25a5773f-6a4d-4e3b-9b89-a572f80c5d3a",
+      "targetId": "41f65ce6-9425-4c5a-8264-4ff3228d48f7",
+      "timestamp": "2025-02-06T12:53:57.329733"
+    },
+    {
+      "id": "7eb3ed6d-264b-4a7b-84df-4f1d0bd7a3d7",
+      "sourceId": "25a5773f-6a4d-4e3b-9b89-a572f80c5d3a",
+      "targetId": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+      "timestamp": "2025-02-06T12:53:57.423224"
+    },
+    {
+      "id": "19fb87cb-6df4-4f93-baaf-a2cd1296b857",
+      "sourceId": "e7c0ff3c-b10c-4a03-82f0-de7cdf6a7f1a",
+      "targetId": "25a5773f-6a4d-4e3b-9b89-a572f80c5d3a",
+      "timestamp": "2025-02-06T12:54:20.616051"
+    },
+    {
+      "id": "62a08856-15ea-47a0-b98d-e4c46754280e",
+      "sourceId": "25a5773f-6a4d-4e3b-9b89-a572f80c5d3a",
+      "targetId": "091239a6-d7b3-4716-805c-f327c2fba90f",
+      "timestamp": "2025-02-06T12:54:20.787045"
+    }
+  ]
+}

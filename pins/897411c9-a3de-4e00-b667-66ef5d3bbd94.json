@@ -1,0 +1,83 @@
+{
+  "lat": 52.40441202156967,
+  "lng": 12.560827732086183,
+  "name": "Alex Kulikov",
+  "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnhhMHczZmw5M2Robjhpb3k5aTM3c2dmcGprZTlteDF3MnJhaDdvaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QMHoU66sBXqqLqYvGO/giphy.gif",
+  "timestamp": "2025-02-06T12:54:12.756288",
+  "location": "Brandenburg an der Havel",
+  "id": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+  "connections": [
+    {
+      "id": "f354d552-1fd1-45d2-b5c7-fc156e0d7329",
+      "sourceId": "091239a6-d7b3-4716-805c-f327c2fba90f",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:54:38.216539"
+    },
+    {
+      "id": "60030db0-92ee-44ee-bbb0-a18fc3b51361",
+      "sourceId": "332c0e4a-ea3c-4f47-9e47-f80382ef1488",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:55:25.179242"
+    },
+    {
+      "id": "0a262ce8-8a5c-489b-80a3-f95e3c3342ba",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:55:34.012908"
+    },
+    {
+      "id": "9f7092fd-a856-4189-ac74-3a238f1ea88b",
+      "sourceId": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:55:56.072300"
+    },
+    {
+      "id": "8b503697-d6fa-450a-8596-d5944f8b97be",
+      "sourceId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "targetId": "b9670c13-4c16-4d0c-a7bf-05cea2515081",
+      "timestamp": "2025-02-06T12:56:01.311013"
+    },
+    {
+      "id": "6e7c2f32-4562-4411-bcf8-3ab6cb049012",
+      "sourceId": "a3be15f0-cccf-4c56-9e01-7307436cfe9e",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:56:25.801600"
+    },
+    {
+      "id": "5758875f-4c38-43d2-971e-25fbf6a10828",
+      "sourceId": "53577958-2a35-4a48-b422-65d465fd9253",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:56:59.614036"
+    },
+    {
+      "id": "fc73364f-a209-496a-9dc3-e3fd3f2c1401",
+      "sourceId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "targetId": "53577958-2a35-4a48-b422-65d465fd9253",
+      "timestamp": "2025-02-06T12:57:05.422085"
+    },
+    {
+      "id": "8813ec43-f9c7-4230-b581-ae0f8d0d6a70",
+      "sourceId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "targetId": "53577958-2a35-4a48-b422-65d465fd9253",
+      "timestamp": "2025-02-06T12:57:05.424641"
+    },
+    {
+      "id": "e8076198-cb3c-4dd5-8102-0bb66c6f4c72",
+      "sourceId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:57:41.875577"
+    },
+    {
+      "id": "06c3266c-20c3-48f8-837a-049da473b88a",
+      "sourceId": "63eb63f2-ece8-4b71-83bf-0e457ac54725",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:58:43.394845"
+    },
+    {
+      "id": "d2fc9f16-b524-4b62-9901-ff44e69ff569",
+      "sourceId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "targetId": "63eb63f2-ece8-4b71-83bf-0e457ac54725",
+      "timestamp": "2025-02-06T12:59:19.894735"
+    }
+  ]
+}

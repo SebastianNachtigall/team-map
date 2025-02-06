@@ -1,0 +1,23 @@
+{
+  "lat": 52.39458941624853,
+  "lng": 9.762554168701174,
+  "name": "Sarina",
+  "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDFuNXhqZGExbmc3MGxhYWx5ZDJsNmN1bGFsNDh6YXFzenR6OTU4aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XIqCQx02E1U9W/giphy.gif",
+  "timestamp": "2025-02-06T12:54:16.525960",
+  "location": "Hannover",
+  "id": "382f3c9b-6ca5-4cc1-8117-c6a51b9aa9ad",
+  "connections": [
+    {
+      "id": "671e3ba6-af94-4d2e-97d9-619915c28467",
+      "sourceId": "382f3c9b-6ca5-4cc1-8117-c6a51b9aa9ad",
+      "targetId": "c3d42718-cf82-4695-ae67-6b3e1611b8f0",
+      "timestamp": "2025-02-06T12:59:10.992737"
+    },
+    {
+      "id": "feff71ac-9fcc-40ec-bd37-1d36987356ef",
+      "sourceId": "c3d42718-cf82-4695-ae67-6b3e1611b8f0",
+      "targetId": "382f3c9b-6ca5-4cc1-8117-c6a51b9aa9ad",
+      "timestamp": "2025-02-06T13:00:39.175101"
+    }
+  ]
+}

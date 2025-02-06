@@ -1,0 +1,23 @@
+{
+  "lat": 52.566334145326486,
+  "lng": 13.084716796875,
+  "name": "Franziska B\u00fclow",
+  "imageUrl": "",
+  "timestamp": "2025-02-06T12:53:46.623956",
+  "location": "Falkensee",
+  "id": "b9670c13-4c16-4d0c-a7bf-05cea2515081",
+  "connections": [
+    {
+      "id": "8b503697-d6fa-450a-8596-d5944f8b97be",
+      "sourceId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "targetId": "b9670c13-4c16-4d0c-a7bf-05cea2515081",
+      "timestamp": "2025-02-06T12:56:01.311013"
+    },
+    {
+      "id": "e70abc1e-2ccf-460d-a02f-091d1615bc63",
+      "sourceId": "b9670c13-4c16-4d0c-a7bf-05cea2515081",
+      "targetId": "1b7c8fa0-d916-4134-b2c4-c65ee03d7c4d",
+      "timestamp": "2025-02-06T12:56:06.673464"
+    }
+  ]
+}

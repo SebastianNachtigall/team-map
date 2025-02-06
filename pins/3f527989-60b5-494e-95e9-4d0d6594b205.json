@@ -1,0 +1,41 @@
+{
+  "lat": 52.490306584206124,
+  "lng": 13.393020629882814,
+  "name": "Norman",
+  "imageUrl": "https://media.giphy.com/media/asuUZGSvYVSTIBFRfL/giphy.gif?cid=ecf05e47an6moksfg4uaazz9zywyj0kj1kaxssl4nrh79boc&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+  "timestamp": "2025-02-06T12:52:34.169774",
+  "location": "Berlin",
+  "id": "3f527989-60b5-494e-95e9-4d0d6594b205",
+  "connections": [
+    {
+      "id": "cd504cf9-607c-456c-a3d2-42fc91ef7ab5",
+      "sourceId": "643d6bf2-4289-4e26-b8b3-ca5a97f7668c",
+      "targetId": "3f527989-60b5-494e-95e9-4d0d6594b205",
+      "timestamp": "2025-02-06T12:53:16.465484"
+    },
+    {
+      "id": "ba61c3fb-c106-4e72-8c81-4966793f40dd",
+      "sourceId": "3f527989-60b5-494e-95e9-4d0d6594b205",
+      "targetId": "0596d982-02c4-4abc-8a4b-26e315481fbc",
+      "timestamp": "2025-02-06T12:53:22.347126"
+    },
+    {
+      "id": "d3e0f824-8b8a-425d-9844-4329c856e06b",
+      "sourceId": "3f527989-60b5-494e-95e9-4d0d6594b205",
+      "targetId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "timestamp": "2025-02-06T12:54:12.361820"
+    },
+    {
+      "id": "5dcf7d2d-0c5f-4abf-8ea2-dfd6d3708d12",
+      "sourceId": "3f527989-60b5-494e-95e9-4d0d6594b205",
+      "targetId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "timestamp": "2025-02-06T12:54:28.233243"
+    },
+    {
+      "id": "67728016-e97f-48c2-af12-3d3675d33ded",
+      "sourceId": "3f527989-60b5-494e-95e9-4d0d6594b205",
+      "targetId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "timestamp": "2025-02-06T12:55:37.653891"
+    }
+  ]
+}

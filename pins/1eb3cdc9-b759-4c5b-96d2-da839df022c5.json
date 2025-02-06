@@ -1,0 +1,47 @@
+{
+  "lat": 47.56633400505088,
+  "lng": 10.698623657226562,
+  "name": "Arturo",
+  "imageUrl": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExejZvZGt6MWtjcXBna3d5Zmp4cmR1dnhidm5lYnV4YWVtMjltdXduZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BfID0O1Qwzf8I/giphy.gif",
+  "timestamp": "2025-02-06T12:53:05.596301",
+  "location": "F\u00fcssen",
+  "id": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+  "connections": [
+    {
+      "id": "7eb3ed6d-264b-4a7b-84df-4f1d0bd7a3d7",
+      "sourceId": "25a5773f-6a4d-4e3b-9b89-a572f80c5d3a",
+      "targetId": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+      "timestamp": "2025-02-06T12:53:57.423224"
+    },
+    {
+      "id": "0dcbe307-ed1b-4fca-ac4e-31cf1c6f47fb",
+      "sourceId": "091239a6-d7b3-4716-805c-f327c2fba90f",
+      "targetId": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+      "timestamp": "2025-02-06T12:55:08.096888"
+    },
+    {
+      "id": "8f7684ac-70c2-4d85-8e63-71a152e383ae",
+      "sourceId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "targetId": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+      "timestamp": "2025-02-06T12:56:24.826578"
+    },
+    {
+      "id": "efc2f7c2-7ca2-44c4-a32c-361995350392",
+      "sourceId": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+      "targetId": "c3d42718-cf82-4695-ae67-6b3e1611b8f0",
+      "timestamp": "2025-02-06T13:01:15.000150"
+    },
+    {
+      "id": "01180c3b-3d1c-44a3-9ffa-889a809b0dcf",
+      "sourceId": "c3d42718-cf82-4695-ae67-6b3e1611b8f0",
+      "targetId": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+      "timestamp": "2025-02-06T13:01:31.247667"
+    },
+    {
+      "id": "f8a91cb9-1b48-47ef-a439-103b61f30e47",
+      "sourceId": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+      "targetId": "c3d42718-cf82-4695-ae67-6b3e1611b8f0",
+      "timestamp": "2025-02-06T13:01:51.563840"
+    }
+  ]
+}

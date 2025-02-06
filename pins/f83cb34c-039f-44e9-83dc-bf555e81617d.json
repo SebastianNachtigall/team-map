@@ -1,0 +1,29 @@
+{
+  "lat": 40.63688312646408,
+  "lng": -8.654479980468752,
+  "name": "Luiz",
+  "imageUrl": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjRtcWV2MGo5dzBtbGx5ZmNwNjYyMG9nZjFnZjU1bW9uc3p2MzNldSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/IYG3wulSTkS2kwat60/giphy.gif",
+  "timestamp": "2025-02-06T12:52:23.393806",
+  "location": "Aveiro",
+  "id": "f83cb34c-039f-44e9-83dc-bf555e81617d",
+  "connections": [
+    {
+      "id": "d6ccc440-044c-428f-992c-89fdb79a2bbb",
+      "sourceId": "091239a6-d7b3-4716-805c-f327c2fba90f",
+      "targetId": "f83cb34c-039f-44e9-83dc-bf555e81617d",
+      "timestamp": "2025-02-06T12:54:08.787384"
+    },
+    {
+      "id": "32e36fc4-1dca-4518-aa15-918029a42a1e",
+      "sourceId": "08a9fda3-144b-498a-8d18-5f5421a0c636",
+      "targetId": "f83cb34c-039f-44e9-83dc-bf555e81617d",
+      "timestamp": "2025-02-06T12:55:05.205729"
+    },
+    {
+      "id": "d6331ac1-93b2-4322-9e9b-b30aaaa0956a",
+      "sourceId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "targetId": "f83cb34c-039f-44e9-83dc-bf555e81617d",
+      "timestamp": "2025-02-06T13:01:09.821503"
+    }
+  ]
+}

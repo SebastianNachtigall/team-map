@@ -1,0 +1,53 @@
+{
+  "lat": 52.522905940278065,
+  "lng": 13.381347656250002,
+  "name": "Sebastian Nachtigall",
+  "imageUrl": "https://media.giphy.com/media/VHl0ajQWjOF2NYHB02/giphy.gif?cid=790b7611nmoviyff442kdz8xwhego8o4klsmx51im2xtqylu&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+  "timestamp": "2025-02-06T12:51:10.109002",
+  "location": "Berlin",
+  "id": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+  "connections": [
+    {
+      "id": "a65d0732-a6b5-48d7-9905-9f8285c603bf",
+      "sourceId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "targetId": "091239a6-d7b3-4716-805c-f327c2fba90f",
+      "timestamp": "2025-02-06T12:53:54.750141"
+    },
+    {
+      "id": "e434889d-8748-4e18-b3a8-ea9125334760",
+      "sourceId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "targetId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "timestamp": "2025-02-06T12:54:53.893005"
+    },
+    {
+      "id": "614d662f-c34c-4f7b-970d-cc6327d388b1",
+      "sourceId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "targetId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "timestamp": "2025-02-06T12:55:10.737143"
+    },
+    {
+      "id": "62b21c34-fa65-480d-b806-9a64c8d89697",
+      "sourceId": "a3be15f0-cccf-4c56-9e01-7307436cfe9e",
+      "targetId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "timestamp": "2025-02-06T12:55:57.419358"
+    },
+    {
+      "id": "b844c367-fa58-4da1-9913-6ca82b4a551f",
+      "sourceId": "e79d5f6a-0777-4268-ad77-39a4a86129d8",
+      "targetId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "timestamp": "2025-02-06T12:56:13.633439"
+    },
+    {
+      "id": "8f7684ac-70c2-4d85-8e63-71a152e383ae",
+      "sourceId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "targetId": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+      "timestamp": "2025-02-06T12:56:24.826578"
+    },
+    {
+      "id": "a6c930e8-f873-45e3-96c1-60f06346f086",
+      "sourceId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "targetId": "73917ad2-b727-4693-9b32-e3f2f17964ab",
+      "timestamp": "2025-02-06T12:56:25.671958"
+    }
+  ]
+}

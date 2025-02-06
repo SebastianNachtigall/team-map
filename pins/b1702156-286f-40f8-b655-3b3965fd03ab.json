@@ -1,0 +1,59 @@
+{
+  "lat": 52.76164522152331,
+  "lng": 13.028411865234377,
+  "name": "Daria",
+  "imageUrl": "https://giphy.com/gifs/love-hug-potato-UuB5lh1bL1Dl6svihe",
+  "timestamp": "2025-02-06T12:53:12.765193",
+  "location": "Kremmen",
+  "id": "b1702156-286f-40f8-b655-3b3965fd03ab",
+  "connections": [
+    {
+      "id": "d3e0f824-8b8a-425d-9844-4329c856e06b",
+      "sourceId": "3f527989-60b5-494e-95e9-4d0d6594b205",
+      "targetId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "timestamp": "2025-02-06T12:54:12.361820"
+    },
+    {
+      "id": "9993a36f-799e-47a4-ba6c-f1869f92851e",
+      "sourceId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "targetId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "timestamp": "2025-02-06T12:54:15.377145"
+    },
+    {
+      "id": "507f8d34-39bb-4c66-8453-ae54cfc85026",
+      "sourceId": "1b7c8fa0-d916-4134-b2c4-c65ee03d7c4d",
+      "targetId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "timestamp": "2025-02-06T12:54:42.523240"
+    },
+    {
+      "id": "e434889d-8748-4e18-b3a8-ea9125334760",
+      "sourceId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "targetId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "timestamp": "2025-02-06T12:54:53.893005"
+    },
+    {
+      "id": "614d662f-c34c-4f7b-970d-cc6327d388b1",
+      "sourceId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "targetId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "timestamp": "2025-02-06T12:55:10.737143"
+    },
+    {
+      "id": "8ed76eb9-3ab2-46f8-9d44-323bc07b3982",
+      "sourceId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "targetId": "41f65ce6-9425-4c5a-8264-4ff3228d48f7",
+      "timestamp": "2025-02-06T12:55:50.499067"
+    },
+    {
+      "id": "e8076198-cb3c-4dd5-8102-0bb66c6f4c72",
+      "sourceId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:57:41.875577"
+    },
+    {
+      "id": "346621af-e484-41af-8dd5-1266c4c11548",
+      "sourceId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "targetId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "timestamp": "2025-02-06T13:00:16.914173"
+    }
+  ]
+}

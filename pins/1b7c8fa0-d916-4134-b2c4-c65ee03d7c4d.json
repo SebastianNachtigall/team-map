@@ -1,0 +1,41 @@
+{
+  "lat": 52.40116206466771,
+  "lng": 13.05381774902344,
+  "name": "Florian Prange",
+  "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZkamM5N3Z6NnVkYm91cHdyOHkyZng3Y3l0dGVuNGxzemdsbXBzYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13oAIJjaKPhf3y/giphy.gif",
+  "timestamp": "2025-02-06T12:52:55.420639",
+  "location": "Potsdam",
+  "id": "1b7c8fa0-d916-4134-b2c4-c65ee03d7c4d",
+  "connections": [
+    {
+      "id": "fd973065-af60-40be-82ba-f83b21e30eb7",
+      "sourceId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "targetId": "1b7c8fa0-d916-4134-b2c4-c65ee03d7c4d",
+      "timestamp": "2025-02-06T12:53:38.151092"
+    },
+    {
+      "id": "7a90c538-558e-4a85-b514-b56e15722715",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "1b7c8fa0-d916-4134-b2c4-c65ee03d7c4d",
+      "timestamp": "2025-02-06T12:54:20.834168"
+    },
+    {
+      "id": "507f8d34-39bb-4c66-8453-ae54cfc85026",
+      "sourceId": "1b7c8fa0-d916-4134-b2c4-c65ee03d7c4d",
+      "targetId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "timestamp": "2025-02-06T12:54:42.523240"
+    },
+    {
+      "id": "e70abc1e-2ccf-460d-a02f-091d1615bc63",
+      "sourceId": "b9670c13-4c16-4d0c-a7bf-05cea2515081",
+      "targetId": "1b7c8fa0-d916-4134-b2c4-c65ee03d7c4d",
+      "timestamp": "2025-02-06T12:56:06.673464"
+    },
+    {
+      "id": "e0f726bc-68a2-49ce-a2c8-25cc44fab628",
+      "sourceId": "1b7c8fa0-d916-4134-b2c4-c65ee03d7c4d",
+      "targetId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "timestamp": "2025-02-06T12:58:33.277216"
+    }
+  ]
+}

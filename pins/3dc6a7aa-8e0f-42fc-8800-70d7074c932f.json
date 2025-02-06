@@ -1,0 +1,65 @@
+{
+  "lat": 38.74979935887855,
+  "lng": -9.146118164062502,
+  "name": "Pedro Sousa",
+  "imageUrl": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHF2YWdtcDRkNGx4a3hzdHN0ajh4dnpoMWR1c3hhZ3Rlb2czeHEwaiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/vghskRXiOFUCkVAp3D/giphy.gif",
+  "timestamp": "2025-02-06T12:52:15.696779",
+  "location": "Lisboa",
+  "id": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+  "connections": [
+    {
+      "id": "fd973065-af60-40be-82ba-f83b21e30eb7",
+      "sourceId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "targetId": "1b7c8fa0-d916-4134-b2c4-c65ee03d7c4d",
+      "timestamp": "2025-02-06T12:53:38.151092"
+    },
+    {
+      "id": "1f373eb0-7782-4f06-8982-596465721a68",
+      "sourceId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "targetId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "timestamp": "2025-02-06T12:58:15.689424"
+    },
+    {
+      "id": "e0f726bc-68a2-49ce-a2c8-25cc44fab628",
+      "sourceId": "1b7c8fa0-d916-4134-b2c4-c65ee03d7c4d",
+      "targetId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "timestamp": "2025-02-06T12:58:33.277216"
+    },
+    {
+      "id": "85865151-c3a2-4602-bc95-b206233e637c",
+      "sourceId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "targetId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "timestamp": "2025-02-06T12:58:47.217586"
+    },
+    {
+      "id": "ca4a0b07-935b-47ad-902c-403a0e6bb3f1",
+      "sourceId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "targetId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "timestamp": "2025-02-06T12:59:10.831344"
+    },
+    {
+      "id": "6720b4b7-70eb-42f8-b630-269f6767c6c4",
+      "sourceId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "targetId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "timestamp": "2025-02-06T12:59:32.466398"
+    },
+    {
+      "id": "9aefb1d1-ca76-4aee-801b-b2aea7476642",
+      "sourceId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "targetId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "timestamp": "2025-02-06T12:59:51.153933"
+    },
+    {
+      "id": "ba0af2a8-8d6b-4f2b-a3b2-1e0ccfc02562",
+      "sourceId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "targetId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "timestamp": "2025-02-06T13:00:10.991604"
+    },
+    {
+      "id": "d6331ac1-93b2-4322-9e9b-b30aaaa0956a",
+      "sourceId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "targetId": "f83cb34c-039f-44e9-83dc-bf555e81617d",
+      "timestamp": "2025-02-06T13:01:09.821503"
+    }
+  ]
+}

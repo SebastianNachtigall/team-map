@@ -1,0 +1,53 @@
+{
+  "lat": 52.496159531097106,
+  "lng": 13.345642089843752,
+  "name": "Katharina Bursch",
+  "imageUrl": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHpxemsyNmVzd3RxNGJhbGxocnFkdzcxemNldXF6dmRkbm9hdXNmNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lPoxtQlcX30doRbHTN/giphy.gif",
+  "timestamp": "2025-02-06T12:53:18.056166",
+  "location": "Berlin",
+  "id": "cc00d115-19b5-4410-a239-7b94c211ce76",
+  "connections": [
+    {
+      "id": "5dcf7d2d-0c5f-4abf-8ea2-dfd6d3708d12",
+      "sourceId": "3f527989-60b5-494e-95e9-4d0d6594b205",
+      "targetId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "timestamp": "2025-02-06T12:54:28.233243"
+    },
+    {
+      "id": "111b855c-4601-4cb9-8eb6-f4424f4f72fb",
+      "sourceId": "373b99b3-c2e9-479c-be88-98ec0ea9e8f8",
+      "targetId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "timestamp": "2025-02-06T12:54:57.507977"
+    },
+    {
+      "id": "e536701c-99ed-47ce-8c4c-90146b4afa78",
+      "sourceId": "3a4a0ac1-d8d6-41f8-a0fb-3cde74804961",
+      "targetId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "timestamp": "2025-02-06T12:55:33.239704"
+    },
+    {
+      "id": "a7723a7a-e092-4d4f-a576-85b6a8624831",
+      "sourceId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "targetId": "332c0e4a-ea3c-4f47-9e47-f80382ef1488",
+      "timestamp": "2025-02-06T12:55:41.601180"
+    },
+    {
+      "id": "ba03f9f4-62df-48df-9d5b-dc12890ad202",
+      "sourceId": "0f4760d5-9ec1-495d-84fd-4f1c2653842d",
+      "targetId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "timestamp": "2025-02-06T12:55:45.172926"
+    },
+    {
+      "id": "7b6addc9-7302-48fb-9e02-c9350ef20030",
+      "sourceId": "f386ad1d-7513-46b2-9b40-1809fe59eeb6",
+      "targetId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "timestamp": "2025-02-06T12:55:57.226426"
+    },
+    {
+      "id": "a3ae13c0-aa74-402c-b9c0-666e9ea7b749",
+      "sourceId": "455f9661-a339-447d-a9cc-31301cbfa554",
+      "targetId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "timestamp": "2025-02-06T12:56:44.427810"
+    }
+  ]
+}

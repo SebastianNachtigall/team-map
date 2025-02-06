@@ -1,0 +1,41 @@
+{
+  "lat": 52.51337417499763,
+  "lng": 13.395595550537111,
+  "name": "Janice Paschek",
+  "imageUrl": "",
+  "timestamp": "2025-02-06T12:52:53.053673",
+  "location": "Berlin",
+  "id": "373b99b3-c2e9-479c-be88-98ec0ea9e8f8",
+  "connections": [
+    {
+      "id": "111b855c-4601-4cb9-8eb6-f4424f4f72fb",
+      "sourceId": "373b99b3-c2e9-479c-be88-98ec0ea9e8f8",
+      "targetId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "timestamp": "2025-02-06T12:54:57.507977"
+    },
+    {
+      "id": "80e7ad35-be2a-4310-a787-10285890eb7b",
+      "sourceId": "332c0e4a-ea3c-4f47-9e47-f80382ef1488",
+      "targetId": "373b99b3-c2e9-479c-be88-98ec0ea9e8f8",
+      "timestamp": "2025-02-06T12:55:48.174002"
+    },
+    {
+      "id": "9c901b36-bb46-41b5-8fb3-ac6e037b94ac",
+      "sourceId": "455f9661-a339-447d-a9cc-31301cbfa554",
+      "targetId": "373b99b3-c2e9-479c-be88-98ec0ea9e8f8",
+      "timestamp": "2025-02-06T12:56:13.729638"
+    },
+    {
+      "id": "238a15ec-368d-40b2-82cd-10d6b2a36e9e",
+      "sourceId": "f386ad1d-7513-46b2-9b40-1809fe59eeb6",
+      "targetId": "373b99b3-c2e9-479c-be88-98ec0ea9e8f8",
+      "timestamp": "2025-02-06T12:56:44.065582"
+    },
+    {
+      "id": "4115428f-5b82-4d16-be22-a20d7186db2f",
+      "sourceId": "373b99b3-c2e9-479c-be88-98ec0ea9e8f8",
+      "targetId": "514878d0-f27a-476b-933b-1aa7679aa6d2",
+      "timestamp": "2025-02-06T13:00:23.253028"
+    }
+  ]
+}

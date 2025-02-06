@@ -1,0 +1,17 @@
+{
+  "lat": 52.49072467767573,
+  "lng": 13.325386047363283,
+  "name": "Miriam P\u00f6schel",
+  "imageUrl": "https://giphy.com/gifs/pudgypenguins-happy-yahoo-yippie-WZklEzvRrAtncnHqnB",
+  "timestamp": "2025-02-06T12:55:40.018173",
+  "location": "Berlin",
+  "id": "1c3d5ade-6ae6-435f-9d26-f10ef9e55213",
+  "connections": [
+    {
+      "id": "6fda31cf-bc01-4bf4-b02a-8182c165a7ea",
+      "sourceId": "1c3d5ade-6ae6-435f-9d26-f10ef9e55213",
+      "targetId": "643d6bf2-4289-4e26-b8b3-ca5a97f7668c",
+      "timestamp": "2025-02-06T12:58:43.556244"
+    }
+  ]
+}

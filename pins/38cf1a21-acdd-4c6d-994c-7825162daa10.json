@@ -1,0 +1,17 @@
+{
+  "lat": 52.33030397982598,
+  "lng": 9.739379882812502,
+  "name": "Maren H\u00f6fler",
+  "imageUrl": "https://giphy.com/gifs/bike-bicycle-monkey-yEU4aLQUU905i",
+  "timestamp": "2025-02-06T12:55:23.816149",
+  "location": "Hemmingen",
+  "id": "38cf1a21-acdd-4c6d-994c-7825162daa10",
+  "connections": [
+    {
+      "id": "192bb086-01de-46be-991e-7b06ec42acef",
+      "sourceId": "0596d982-02c4-4abc-8a4b-26e315481fbc",
+      "targetId": "38cf1a21-acdd-4c6d-994c-7825162daa10",
+      "timestamp": "2025-02-06T12:56:32.735168"
+    }
+  ]
+}

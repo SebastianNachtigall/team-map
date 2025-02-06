@@ -1,0 +1,29 @@
+{
+  "lat": 52.54712855158348,
+  "lng": 13.417224884033205,
+  "name": "Sophia May",
+  "imageUrl": "https://giphy.com/gifs/ecstasy-happy-kitty-gT93oBucqsHNS",
+  "timestamp": "2025-02-06T12:55:37.836989",
+  "location": "Berlin",
+  "id": "455f9661-a339-447d-a9cc-31301cbfa554",
+  "connections": [
+    {
+      "id": "9c901b36-bb46-41b5-8fb3-ac6e037b94ac",
+      "sourceId": "455f9661-a339-447d-a9cc-31301cbfa554",
+      "targetId": "373b99b3-c2e9-479c-be88-98ec0ea9e8f8",
+      "timestamp": "2025-02-06T12:56:13.729638"
+    },
+    {
+      "id": "a3ae13c0-aa74-402c-b9c0-666e9ea7b749",
+      "sourceId": "455f9661-a339-447d-a9cc-31301cbfa554",
+      "targetId": "cc00d115-19b5-4410-a239-7b94c211ce76",
+      "timestamp": "2025-02-06T12:56:44.427810"
+    },
+    {
+      "id": "360ca9b7-00d8-40ed-955f-33b8968dbf77",
+      "sourceId": "2bb3be80-aae9-448b-8a8e-8bbb5a8518e3",
+      "targetId": "455f9661-a339-447d-a9cc-31301cbfa554",
+      "timestamp": "2025-02-06T12:57:33.478911"
+    }
+  ]
+}

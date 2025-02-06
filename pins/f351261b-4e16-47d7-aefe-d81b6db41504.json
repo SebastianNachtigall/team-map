@@ -1,0 +1,59 @@
+{
+  "lat": 52.183079077026974,
+  "lng": 14.667263031005861,
+  "name": "Janine Helm",
+  "imageUrl": "https://giphy.com/gifs/pony-ZPKA8hg390ZP2",
+  "timestamp": "2025-02-06T12:53:53.346851",
+  "location": "Vogelsang",
+  "id": "f351261b-4e16-47d7-aefe-d81b6db41504",
+  "connections": [
+    {
+      "id": "9993a36f-799e-47a4-ba6c-f1869f92851e",
+      "sourceId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "targetId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "timestamp": "2025-02-06T12:54:15.377145"
+    },
+    {
+      "id": "559377f6-7e82-4f76-9efb-2de175ca4470",
+      "sourceId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "targetId": "da624fdc-3a9d-4610-9ef3-a999f1f2032b",
+      "timestamp": "2025-02-06T12:54:34.142751"
+    },
+    {
+      "id": "67728016-e97f-48c2-af12-3d3675d33ded",
+      "sourceId": "3f527989-60b5-494e-95e9-4d0d6594b205",
+      "targetId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "timestamp": "2025-02-06T12:55:37.653891"
+    },
+    {
+      "id": "439fcac1-42b7-43fe-8d9b-42a64f030066",
+      "sourceId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "targetId": "0596d982-02c4-4abc-8a4b-26e315481fbc",
+      "timestamp": "2025-02-06T12:55:59.924515"
+    },
+    {
+      "id": "7aa4a10c-90bb-4265-80ff-c0422323d9de",
+      "sourceId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "targetId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "timestamp": "2025-02-06T12:56:54.652452"
+    },
+    {
+      "id": "9df0b2e2-e7de-403b-946a-4e6066d4fbfe",
+      "sourceId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "targetId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "timestamp": "2025-02-06T12:57:05.607190"
+    },
+    {
+      "id": "c568e9e0-af51-497a-9e24-17e8d6b29c56",
+      "sourceId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "targetId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "timestamp": "2025-02-06T12:57:05.611432"
+    },
+    {
+      "id": "74a12a34-dfa8-4076-838a-83964c133aa7",
+      "sourceId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "targetId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "timestamp": "2025-02-06T12:57:13.208899"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "lat": 50.275298611425185,
+  "lng": 19.072265625000004,
+  "name": "Ania Winiarska",
+  "imageUrl": "",
+  "timestamp": "2025-02-06T12:54:35.175355",
+  "location": "Katowice",
+  "id": "0e21d109-49e8-4638-8efc-63d686af3026",
+  "connections": [
+    {
+      "id": "1f373eb0-7782-4f06-8982-596465721a68",
+      "sourceId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "targetId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "timestamp": "2025-02-06T12:58:15.689424"
+    },
+    {
+      "id": "85865151-c3a2-4602-bc95-b206233e637c",
+      "sourceId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "targetId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "timestamp": "2025-02-06T12:58:47.217586"
+    },
+    {
+      "id": "ca4a0b07-935b-47ad-902c-403a0e6bb3f1",
+      "sourceId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "targetId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "timestamp": "2025-02-06T12:59:10.831344"
+    },
+    {
+      "id": "6720b4b7-70eb-42f8-b630-269f6767c6c4",
+      "sourceId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "targetId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "timestamp": "2025-02-06T12:59:32.466398"
+    },
+    {
+      "id": "9aefb1d1-ca76-4aee-801b-b2aea7476642",
+      "sourceId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "targetId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "timestamp": "2025-02-06T12:59:51.153933"
+    },
+    {
+      "id": "ba0af2a8-8d6b-4f2b-a3b2-1e0ccfc02562",
+      "sourceId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "targetId": "3dc6a7aa-8e0f-42fc-8800-70d7074c932f",
+      "timestamp": "2025-02-06T13:00:10.991604"
+    },
+    {
+      "id": "549feb59-a9e1-4619-89e3-89e780c6cd1f",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "0e21d109-49e8-4638-8efc-63d686af3026",
+      "timestamp": "2025-02-06T13:01:34.540426"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "lat": 52.49600517295731,
+  "lng": 13.403320312500002,
+  "name": "Johann",
+  "imageUrl": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW5lMjh1aWh4b2dibG4wZ2NlaHNwb2ZpMmhiYXFmcDZ4MGtpcGlwYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HaNdGHcBuSGZQlwxuv/giphy.gif",
+  "timestamp": "2025-02-06T12:52:39.968977",
+  "location": "Berlin",
+  "id": "643d6bf2-4289-4e26-b8b3-ca5a97f7668c",
+  "connections": [
+    {
+      "id": "cd504cf9-607c-456c-a3d2-42fc91ef7ab5",
+      "sourceId": "643d6bf2-4289-4e26-b8b3-ca5a97f7668c",
+      "targetId": "3f527989-60b5-494e-95e9-4d0d6594b205",
+      "timestamp": "2025-02-06T12:53:16.465484"
+    },
+    {
+      "id": "6fda31cf-bc01-4bf4-b02a-8182c165a7ea",
+      "sourceId": "1c3d5ade-6ae6-435f-9d26-f10ef9e55213",
+      "targetId": "643d6bf2-4289-4e26-b8b3-ca5a97f7668c",
+      "timestamp": "2025-02-06T12:58:43.556244"
+    }
+  ]
+}

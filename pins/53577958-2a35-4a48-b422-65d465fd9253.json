@@ -1,0 +1,41 @@
+{
+  "lat": 52.415508508871696,
+  "lng": 13.496875762939455,
+  "name": "Thuy-Anh Nguyen",
+  "imageUrl": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDg4cHJ0OTF4OW4wZm9kNmh4OHRtcGRwdDJqYnhrc2VwZXgwYTJ0ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mE5UU204PTV00NFDP2/giphy.gif",
+  "timestamp": "2025-02-06T12:54:19.304439",
+  "location": "Berlin",
+  "id": "53577958-2a35-4a48-b422-65d465fd9253",
+  "connections": [
+    {
+      "id": "3d8094df-b7d0-4437-94fb-17f4e63f7fce",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "53577958-2a35-4a48-b422-65d465fd9253",
+      "timestamp": "2025-02-06T12:55:32.545593"
+    },
+    {
+      "id": "eb0b4ec9-a74c-40cb-977a-878bf22ab2f0",
+      "sourceId": "53577958-2a35-4a48-b422-65d465fd9253",
+      "targetId": "a3be15f0-cccf-4c56-9e01-7307436cfe9e",
+      "timestamp": "2025-02-06T12:55:39.067398"
+    },
+    {
+      "id": "5758875f-4c38-43d2-971e-25fbf6a10828",
+      "sourceId": "53577958-2a35-4a48-b422-65d465fd9253",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:56:59.614036"
+    },
+    {
+      "id": "fc73364f-a209-496a-9dc3-e3fd3f2c1401",
+      "sourceId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "targetId": "53577958-2a35-4a48-b422-65d465fd9253",
+      "timestamp": "2025-02-06T12:57:05.422085"
+    },
+    {
+      "id": "8813ec43-f9c7-4230-b581-ae0f8d0d6a70",
+      "sourceId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "targetId": "53577958-2a35-4a48-b422-65d465fd9253",
+      "timestamp": "2025-02-06T12:57:05.424641"
+    }
+  ]
+}

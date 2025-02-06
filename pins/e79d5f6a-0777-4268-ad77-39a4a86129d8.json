@@ -1,0 +1,53 @@
+{
+  "lat": 42.68254975990173,
+  "lng": 23.314973115921024,
+  "name": "Emil",
+  "imageUrl": "",
+  "timestamp": "2025-02-06T12:53:15.178423",
+  "location": "\u0421\u043e\u0444\u0438\u044f",
+  "id": "e79d5f6a-0777-4268-ad77-39a4a86129d8",
+  "connections": [
+    {
+      "id": "b844c367-fa58-4da1-9913-6ca82b4a551f",
+      "sourceId": "e79d5f6a-0777-4268-ad77-39a4a86129d8",
+      "targetId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "timestamp": "2025-02-06T12:56:13.633439"
+    },
+    {
+      "id": "da287372-fe20-4544-acc7-1e5df955f778",
+      "sourceId": "e79d5f6a-0777-4268-ad77-39a4a86129d8",
+      "targetId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "timestamp": "2025-02-06T12:56:25.941905"
+    },
+    {
+      "id": "da332482-47e7-4199-ad4f-5d292cdc067f",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "e79d5f6a-0777-4268-ad77-39a4a86129d8",
+      "timestamp": "2025-02-06T12:56:35.832815"
+    },
+    {
+      "id": "e7572935-edd2-4bb1-968d-9256519c3eb9",
+      "sourceId": "e79d5f6a-0777-4268-ad77-39a4a86129d8",
+      "targetId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "timestamp": "2025-02-06T12:56:48.056361"
+    },
+    {
+      "id": "b6ac8f5d-f5c8-4489-8d8b-b39f1fd8e2a6",
+      "sourceId": "4e0d473a-a07b-4f1f-bb00-40ec55b80f3d",
+      "targetId": "e79d5f6a-0777-4268-ad77-39a4a86129d8",
+      "timestamp": "2025-02-06T13:00:07.230681"
+    },
+    {
+      "id": "199c6346-1ce7-4ff0-acb0-a324cbd7937c",
+      "sourceId": "e79d5f6a-0777-4268-ad77-39a4a86129d8",
+      "targetId": "4e0d473a-a07b-4f1f-bb00-40ec55b80f3d",
+      "timestamp": "2025-02-06T13:01:49.762483"
+    },
+    {
+      "id": "caeacdbf-048b-453d-aa88-566e28fb7baf",
+      "sourceId": "e79d5f6a-0777-4268-ad77-39a4a86129d8",
+      "targetId": "4e0d473a-a07b-4f1f-bb00-40ec55b80f3d",
+      "timestamp": "2025-02-06T13:01:49.764421"
+    }
+  ]
+}

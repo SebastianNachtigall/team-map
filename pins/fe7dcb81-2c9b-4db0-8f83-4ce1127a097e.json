@@ -1,0 +1,47 @@
+{
+  "lat": 52.50284765940397,
+  "lng": 9.832763671875002,
+  "name": "Michael Loehn",
+  "imageUrl": "https://media0.giphy.com/media/duNowzaVje6Di3hnOu/200.webp?cid=790b7611li5mr97ngm8fbl5lig7igdpen5fqa53juwfc6ex0&ep=v1_gifs_trending&rid=200.webp&ct=g",
+  "timestamp": "2025-02-06T12:53:19.279602",
+  "location": "Burgwedel",
+  "id": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+  "connections": [
+    {
+      "id": "88aa441c-5dc8-4aab-bf90-225c42785dd7",
+      "sourceId": "dd5b4820-f571-463a-adc3-8612df5f2e9a",
+      "targetId": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+      "timestamp": "2025-02-06T12:54:14.020336"
+    },
+    {
+      "id": "6de10e40-d4a0-48f4-8495-f0e2ab419af9",
+      "sourceId": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+      "targetId": "a896fd29-289a-43ef-a4b8-8a099c8c4f3d",
+      "timestamp": "2025-02-06T12:54:24.217834"
+    },
+    {
+      "id": "55eea9db-686b-4a6a-8683-08bceef0d7e4",
+      "sourceId": "08a9fda3-144b-498a-8d18-5f5421a0c636",
+      "targetId": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+      "timestamp": "2025-02-06T12:54:36.972023"
+    },
+    {
+      "id": "fa28f037-4887-4c2a-a5d8-d59331bbecc9",
+      "sourceId": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+      "targetId": "08a9fda3-144b-498a-8d18-5f5421a0c636",
+      "timestamp": "2025-02-06T12:54:50.931406"
+    },
+    {
+      "id": "9f7092fd-a856-4189-ac74-3a238f1ea88b",
+      "sourceId": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:55:56.072300"
+    },
+    {
+      "id": "4183788d-959a-457e-9ef9-37654e02344f",
+      "sourceId": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+      "targetId": "091239a6-d7b3-4716-805c-f327c2fba90f",
+      "timestamp": "2025-02-06T12:56:50.249357"
+    }
+  ]
+}

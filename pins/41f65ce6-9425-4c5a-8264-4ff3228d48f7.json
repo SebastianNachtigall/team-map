@@ -1,0 +1,23 @@
+{
+  "lat": 37.74031329210266,
+  "lng": -25.603637695312504,
+  "name": "Rui Castro",
+  "imageUrl": "https://media.giphy.com/media/dTtu4B6n8cGAHschCR/giphy.gif?cid=790b76118ldhfxmj99v7hqcs7nquvvkdsttvkatrzwaj6498&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+  "timestamp": "2025-02-06T12:52:57.890534",
+  "location": "Portugal",
+  "id": "41f65ce6-9425-4c5a-8264-4ff3228d48f7",
+  "connections": [
+    {
+      "id": "6995ddaa-8323-4680-ba67-afbb012b6f52",
+      "sourceId": "25a5773f-6a4d-4e3b-9b89-a572f80c5d3a",
+      "targetId": "41f65ce6-9425-4c5a-8264-4ff3228d48f7",
+      "timestamp": "2025-02-06T12:53:57.329733"
+    },
+    {
+      "id": "8ed76eb9-3ab2-46f8-9d44-323bc07b3982",
+      "sourceId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "targetId": "41f65ce6-9425-4c5a-8264-4ff3228d48f7",
+      "timestamp": "2025-02-06T12:55:50.499067"
+    }
+  ]
+}

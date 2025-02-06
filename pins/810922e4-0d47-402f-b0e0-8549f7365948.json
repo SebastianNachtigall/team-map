@@ -1,0 +1,17 @@
+{
+  "lat": 51.46352620526822,
+  "lng": 7.236385345458985,
+  "name": "Jannik P",
+  "imageUrl": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDIya3A0dDNlaG8wcWd3NHU3cGdieGdhajgzNXQ5bnY4cTU5OHB6dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cXblnKXr2BQOaYnTni/giphy.gif",
+  "timestamp": "2025-02-06T12:53:31.179246",
+  "location": "Bochum",
+  "id": "810922e4-0d47-402f-b0e0-8549f7365948",
+  "connections": [
+    {
+      "id": "92d3c031-a5b3-4a88-b321-d56ffcf4b996",
+      "sourceId": "810922e4-0d47-402f-b0e0-8549f7365948",
+      "targetId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "timestamp": "2025-02-06T12:54:51.701099"
+    }
+  ]
+}

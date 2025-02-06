@@ -1,0 +1,35 @@
+{
+  "lat": 51.07074253510442,
+  "lng": 8.789062500000002,
+  "name": "Marlen Neusch\u00e4fer",
+  "imageUrl": "https://giphy.com/gifs/funny-cat-mlvseq9yvZhba",
+  "timestamp": "2025-02-06T12:55:15.302517",
+  "location": "Landkreis Waldeck-Frankenberg",
+  "id": "514878d0-f27a-476b-933b-1aa7679aa6d2",
+  "connections": [
+    {
+      "id": "b2d469ac-d8ca-4c1d-a86c-06c16fbdf4a9",
+      "sourceId": "ef5e1d73-a9f1-4995-befe-628fe2a143e2",
+      "targetId": "514878d0-f27a-476b-933b-1aa7679aa6d2",
+      "timestamp": "2025-02-06T12:56:25.523798"
+    },
+    {
+      "id": "39f417d9-a4c8-4162-97d1-c4e34f91a834",
+      "sourceId": "6f03a0bf-23e7-4b6c-9b8b-db3798345bf5",
+      "targetId": "514878d0-f27a-476b-933b-1aa7679aa6d2",
+      "timestamp": "2025-02-06T12:57:09.450270"
+    },
+    {
+      "id": "2a725315-506d-4322-a1bc-54e4eaf29241",
+      "sourceId": "514878d0-f27a-476b-933b-1aa7679aa6d2",
+      "targetId": "6f03a0bf-23e7-4b6c-9b8b-db3798345bf5",
+      "timestamp": "2025-02-06T12:58:21.925534"
+    },
+    {
+      "id": "4115428f-5b82-4d16-be22-a20d7186db2f",
+      "sourceId": "373b99b3-c2e9-479c-be88-98ec0ea9e8f8",
+      "targetId": "514878d0-f27a-476b-933b-1aa7679aa6d2",
+      "timestamp": "2025-02-06T13:00:23.253028"
+    }
+  ]
+}

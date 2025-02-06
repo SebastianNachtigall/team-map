@@ -1,0 +1,47 @@
+{
+  "lat": 36.59940509993883,
+  "lng": -4.514179229736329,
+  "name": "Martin Fimia",
+  "imageUrl": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMW5wajBxeXY0emtza3FrNW01cXk4M3NvaGZrbjF1Y3dxaXN6MDFmNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JoK3VbaApRUePwhRqi/giphy.gif",
+  "timestamp": "2025-02-06T12:52:56.695036",
+  "location": "Benalm\u00e1dena",
+  "id": "091239a6-d7b3-4716-805c-f327c2fba90f",
+  "connections": [
+    {
+      "id": "a65d0732-a6b5-48d7-9905-9f8285c603bf",
+      "sourceId": "f0be46d2-e37d-4a60-aa21-8b1ffb834cfe",
+      "targetId": "091239a6-d7b3-4716-805c-f327c2fba90f",
+      "timestamp": "2025-02-06T12:53:54.750141"
+    },
+    {
+      "id": "d6ccc440-044c-428f-992c-89fdb79a2bbb",
+      "sourceId": "091239a6-d7b3-4716-805c-f327c2fba90f",
+      "targetId": "f83cb34c-039f-44e9-83dc-bf555e81617d",
+      "timestamp": "2025-02-06T12:54:08.787384"
+    },
+    {
+      "id": "62a08856-15ea-47a0-b98d-e4c46754280e",
+      "sourceId": "25a5773f-6a4d-4e3b-9b89-a572f80c5d3a",
+      "targetId": "091239a6-d7b3-4716-805c-f327c2fba90f",
+      "timestamp": "2025-02-06T12:54:20.787045"
+    },
+    {
+      "id": "f354d552-1fd1-45d2-b5c7-fc156e0d7329",
+      "sourceId": "091239a6-d7b3-4716-805c-f327c2fba90f",
+      "targetId": "897411c9-a3de-4e00-b667-66ef5d3bbd94",
+      "timestamp": "2025-02-06T12:54:38.216539"
+    },
+    {
+      "id": "0dcbe307-ed1b-4fca-ac4e-31cf1c6f47fb",
+      "sourceId": "091239a6-d7b3-4716-805c-f327c2fba90f",
+      "targetId": "1eb3cdc9-b759-4c5b-96d2-da839df022c5",
+      "timestamp": "2025-02-06T12:55:08.096888"
+    },
+    {
+      "id": "4183788d-959a-457e-9ef9-37654e02344f",
+      "sourceId": "fe7dcb81-2c9b-4db0-8f83-4ce1127a097e",
+      "targetId": "091239a6-d7b3-4716-805c-f327c2fba90f",
+      "timestamp": "2025-02-06T12:56:50.249357"
+    }
+  ]
+}

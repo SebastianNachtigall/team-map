@@ -1,0 +1,35 @@
+{
+  "lat": 48.63290858589535,
+  "lng": 7.910156250000001,
+  "name": "Nathalie Pfeffinger",
+  "imageUrl": "run",
+  "timestamp": "2025-02-06T12:52:54.284458",
+  "location": "Rheinau",
+  "id": "0596d982-02c4-4abc-8a4b-26e315481fbc",
+  "connections": [
+    {
+      "id": "c272c159-c1c3-4c40-8d54-b37e5eff7783",
+      "sourceId": "e7c0ff3c-b10c-4a03-82f0-de7cdf6a7f1a",
+      "targetId": "0596d982-02c4-4abc-8a4b-26e315481fbc",
+      "timestamp": "2025-02-06T12:53:06.949924"
+    },
+    {
+      "id": "ba61c3fb-c106-4e72-8c81-4966793f40dd",
+      "sourceId": "3f527989-60b5-494e-95e9-4d0d6594b205",
+      "targetId": "0596d982-02c4-4abc-8a4b-26e315481fbc",
+      "timestamp": "2025-02-06T12:53:22.347126"
+    },
+    {
+      "id": "439fcac1-42b7-43fe-8d9b-42a64f030066",
+      "sourceId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "targetId": "0596d982-02c4-4abc-8a4b-26e315481fbc",
+      "timestamp": "2025-02-06T12:55:59.924515"
+    },
+    {
+      "id": "192bb086-01de-46be-991e-7b06ec42acef",
+      "sourceId": "0596d982-02c4-4abc-8a4b-26e315481fbc",
+      "targetId": "38cf1a21-acdd-4c6d-994c-7825162daa10",
+      "timestamp": "2025-02-06T12:56:32.735168"
+    }
+  ]
+}

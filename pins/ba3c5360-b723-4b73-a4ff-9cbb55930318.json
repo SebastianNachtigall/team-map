@@ -1,0 +1,23 @@
+{
+  "lat": 50.45575537567455,
+  "lng": 30.591430664062504,
+  "name": "Anton Barkov",
+  "imageUrl": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTdoYW8yZzdpb204b2YwaGYydml2YnVrOW1nMjg1dHoyN3UyeGtxNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aDdQn1JYp8vRvkA/giphy.gif",
+  "timestamp": "2025-02-06T12:53:54.964061",
+  "location": "\u041a\u0438\u0457\u0432",
+  "id": "ba3c5360-b723-4b73-a4ff-9cbb55930318",
+  "connections": [
+    {
+      "id": "745c67c5-44bf-46dd-9c20-1256c77e7025",
+      "sourceId": "ba3c5360-b723-4b73-a4ff-9cbb55930318",
+      "targetId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "timestamp": "2025-02-06T12:55:04.502684"
+    },
+    {
+      "id": "049cfacc-e7f4-4069-ad4a-8c43e9044b7c",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "ba3c5360-b723-4b73-a4ff-9cbb55930318",
+      "timestamp": "2025-02-06T12:55:09.998597"
+    }
+  ]
+}

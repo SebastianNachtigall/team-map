@@ -1,0 +1,59 @@
+{
+  "lat": 50.401515322782366,
+  "lng": 30.278320312500004,
+  "name": "Ivanna Kolisnyk",
+  "imageUrl": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzE4cW1tZzUxaWxuYnBoMnZneXhneHJicGJzOHRkMzNlc2lka3FmaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PjN7uoy3NqQ7pIG4q2/giphy.gif",
+  "timestamp": "2025-02-06T12:55:50.583405",
+  "location": "\u041a\u0438\u0457\u0432\u0441\u044c\u043a\u0430 \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
+  "id": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+  "connections": [
+    {
+      "id": "da287372-fe20-4544-acc7-1e5df955f778",
+      "sourceId": "e79d5f6a-0777-4268-ad77-39a4a86129d8",
+      "targetId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "timestamp": "2025-02-06T12:56:25.941905"
+    },
+    {
+      "id": "e1a9aac1-a615-4166-a32e-da21e04931c1",
+      "sourceId": "73917ad2-b727-4693-9b32-e3f2f17964ab",
+      "targetId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "timestamp": "2025-02-06T12:56:28.828329"
+    },
+    {
+      "id": "d80bb407-1dab-4ba3-b5fd-1dad82b6d266",
+      "sourceId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "targetId": "f2dbe276-64e9-444f-b083-0f1fe2a2a06d",
+      "timestamp": "2025-02-06T12:56:30.702829"
+    },
+    {
+      "id": "f33b4fb5-aedc-482e-a51f-7576fbc178d1",
+      "sourceId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "targetId": "73917ad2-b727-4693-9b32-e3f2f17964ab",
+      "timestamp": "2025-02-06T12:56:48.215938"
+    },
+    {
+      "id": "7eb2727f-734f-4bbd-9d18-1ec00b1db371",
+      "sourceId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "targetId": "115780a0-0639-4c3c-9a73-317d5fb06826",
+      "timestamp": "2025-02-06T12:57:00.287791"
+    },
+    {
+      "id": "37008e98-47fa-4b88-b296-1e6fe3d6f2c1",
+      "sourceId": "c65bc2a4-463b-4982-ab20-585414869503",
+      "targetId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "timestamp": "2025-02-06T12:57:04.763752"
+    },
+    {
+      "id": "346621af-e484-41af-8dd5-1266c4c11548",
+      "sourceId": "b1702156-286f-40f8-b655-3b3965fd03ab",
+      "targetId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "timestamp": "2025-02-06T13:00:16.914173"
+    },
+    {
+      "id": "70e7ef0d-f51b-4d82-83dd-0e467b8bf358",
+      "sourceId": "bb335cc5-f0b3-484d-a604-9d656cb08245",
+      "targetId": "dd5b4820-f571-463a-adc3-8612df5f2e9a",
+      "timestamp": "2025-02-06T13:00:27.495715"
+    }
+  ]
+}

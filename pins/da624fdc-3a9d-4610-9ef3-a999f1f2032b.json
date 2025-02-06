@@ -1,0 +1,17 @@
+{
+  "lat": 52.357098761206096,
+  "lng": 9.76238250732422,
+  "name": "June",
+  "imageUrl": "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzJ5MzRmazltcHo2OXAwMmtiMXoyMmt5cW83aXNvcXYyZTZvcTBndCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sNEPPjpnRC8EQlhx1W/giphy.gif",
+  "timestamp": "2025-02-06T12:53:52.167700",
+  "location": "Hannover",
+  "id": "da624fdc-3a9d-4610-9ef3-a999f1f2032b",
+  "connections": [
+    {
+      "id": "559377f6-7e82-4f76-9efb-2de175ca4470",
+      "sourceId": "f351261b-4e16-47d7-aefe-d81b6db41504",
+      "targetId": "da624fdc-3a9d-4610-9ef3-a999f1f2032b",
+      "timestamp": "2025-02-06T12:54:34.142751"
+    }
+  ]
+}
