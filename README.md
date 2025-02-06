@@ -9,7 +9,7 @@ A collaborative web application that allows visitors to view and add their locat
 - Add GIFs to your location (with Giphy integration)
 - Real-time updates for all users
 - Download standalone map snapshots
-- No login required
+- No login required!
 
 ## Installation Options
 
